@@ -84,7 +84,7 @@ const About = () => {
           <div className="relative">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
               <img 
-                src="/lovable-uploads/41653eaf-ad4d-44f5-b7de-774252011e93.png"
+                src="/lovable-uploads/f929749c-dcad-4503-9d6d-a1ea12358485.png"
                 alt="Chinni Sreya Sri"
                 className="w-full h-[500px] object-cover"
               />
