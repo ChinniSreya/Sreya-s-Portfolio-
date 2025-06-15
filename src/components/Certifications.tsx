@@ -1,4 +1,3 @@
-
 import { Award, CheckCircle } from "lucide-react";
 
 const Certifications = () => {
@@ -25,7 +24,7 @@ const Certifications = () => {
       skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design"]
     },
     {
-      title: "ServiceNow Micro Certifications",
+      title: "ServiceNow Micro Certification",
       provider: "ServiceNow",
       category: "Platform Development",
       color: "from-purple-400 to-pink-500",
