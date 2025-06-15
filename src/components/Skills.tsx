@@ -1,4 +1,3 @@
-
 const Skills = () => {
   const skillCategories = [
     {
@@ -73,7 +72,6 @@ const Skills = () => {
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-500">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div 
