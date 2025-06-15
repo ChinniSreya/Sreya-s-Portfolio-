@@ -6,14 +6,12 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-4xl">🎯</span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                 About <span className="text-blue-600">Me</span>
               </h2>
             </div>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <span className="text-2xl mt-1">💡</span>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   I'm a dedicated Front-End Developer with a passion for creating engaging, 
                   user-centric web experiences. I believe that great design and clean code 
@@ -21,7 +19,6 @@ const About = () => {
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl mt-1">🌟</span>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   My journey in web development started with curiosity and has evolved into 
                   a love for crafting digital experiences that not only look beautiful but 
@@ -31,22 +28,20 @@ const About = () => {
             </div>
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mt-8">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">🛠️</span>
                 <h3 className="text-xl font-bold text-gray-900">Core Technologies</h3>
               </div>
               <div className="flex flex-wrap gap-3">
                 {[
-                  { name: "Java", emoji: "☕" },
-                  { name: "HTML", emoji: "🌐" },
-                  { name: "CSS", emoji: "🎨" },
-                  { name: "SQL", emoji: "🗄️" },
-                  { name: "JavaScript", emoji: "⚡" }
+                  { name: "Java" },
+                  { name: "HTML" },
+                  { name: "CSS" },
+                  { name: "SQL" },
+                  { name: "JavaScript" }
                 ].map((skill) => (
                   <span 
                     key={skill.name}
-                    className="bg-white border border-blue-200 text-blue-800 px-4 py-2 rounded-full font-medium hover:bg-blue-50 transition-colors duration-300 flex items-center gap-2 shadow-sm"
+                    className="bg-white border border-blue-200 text-blue-800 px-4 py-2 rounded-full font-medium hover:bg-blue-50 transition-colors duration-300 shadow-sm"
                   >
-                    <span>{skill.emoji}</span>
                     {skill.name}
                   </span>
                 ))}

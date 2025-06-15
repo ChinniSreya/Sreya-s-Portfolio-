@@ -27,21 +27,18 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       value: "sreyasri25@gmail.com",
-      emoji: "📧",
       description: "Send me an email anytime!"
     },
     {
       icon: Phone,
       title: "Phone",
       value: "+91 9700357668",
-      emoji: "📱",
       description: "Call me for urgent matters"
     },
     {
       icon: MapPin,
       title: "Location",
       value: "Tirupati, Andhra Pradesh",
-      emoji: "📍",
       description: "Available for local meetups"
     }
   ];
@@ -51,13 +48,12 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-5xl">💬</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Let's <span className="text-blue-600">Connect</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to bring your next project to life? Let's discuss how we can work together! 🤝
+            Ready to bring your next project to life? Let's discuss how we can work together!
           </p>
         </div>
 
@@ -65,12 +61,11 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-3xl">🚀</span>
                 <h3 className="text-2xl font-bold text-gray-900">Get in touch</h3>
               </div>
               <p className="text-gray-600 mb-8">
                 I'm always excited to work on new projects and collaborate with amazing people. 
-                Drop me a message and let's create something incredible together! ✨
+                Drop me a message and let's create something incredible together!
               </p>
 
               <div className="space-y-6">
@@ -80,10 +75,7 @@ const Contact = () => {
                       <method.icon className="text-white" size={24} />
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-lg">{method.emoji}</span>
-                        <h4 className="font-semibold text-gray-900">{method.title}</h4>
-                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-1">{method.title}</h4>
                       <p className="text-blue-600 font-medium">{method.value}</p>
                       <p className="text-sm text-gray-500">{method.description}</p>
                     </div>
@@ -92,10 +84,7 @@ const Contact = () => {
               </div>
 
               <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl border border-green-200">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">⚡</span>
-                  <h4 className="font-bold text-gray-900">Quick Response</h4>
-                </div>
+                <h4 className="font-bold text-gray-900 mb-2">Quick Response</h4>
                 <p className="text-gray-600 text-sm">I typically respond within 24 hours!</p>
               </div>
             </div>
@@ -103,14 +92,12 @@ const Contact = () => {
 
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-3xl">📝</span>
               <h3 className="text-2xl font-bold text-gray-900">Send Message</h3>
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
-                  <span>👤</span>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Your Name
                 </label>
                 <input
@@ -126,8 +113,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
-                  <span>📧</span>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email Address
                 </label>
                 <input
@@ -143,8 +129,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
-                  <span>💭</span>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message
                 </label>
                 <textarea
@@ -154,7 +139,7 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none hover:border-blue-300"
-                  placeholder="Tell me about your project... 🚀"
+                  placeholder="Tell me about your project..."
                   required
                 />
               </div>
@@ -165,7 +150,6 @@ const Contact = () => {
               >
                 <Send size={20} />
                 <span>Send Message</span>
-                <span>🚀</span>
               </button>
             </form>
 
@@ -173,7 +157,6 @@ const Contact = () => {
               <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
                 <span>🔒</span>
                 <span>Your information is safe and secure</span>
-                <span>✨</span>
               </div>
             </div>
           </div>

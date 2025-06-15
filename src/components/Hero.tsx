@@ -19,21 +19,18 @@ const Hero = () => {
               </h1>
             </div>
             <div className="flex items-center justify-center gap-2 mb-6">
-              <span className="text-2xl">💻</span>
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
                 A passionate <span className="font-semibold text-blue-600">Front-End Developer</span> 
               </p>
-              <span className="text-2xl">✨</span>
             </div>
             <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-              Crafting beautiful, interactive web experiences with creativity and precision 🎨
+              Crafting beautiful, interactive web experiences with creativity and precision
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <button 
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center gap-2"
               >
-                <span>🚀</span>
                 View My Work
               </button>
               <button 

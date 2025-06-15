@@ -3,30 +3,27 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
-      emoji: "💻",
       skills: [
-        { name: "C", emoji: "⚡" },
-        { name: "Java", emoji: "☕" },
-        { name: "Python", emoji: "🐍" },
-        { name: "SQL", emoji: "🗄️" }
+        { name: "C" },
+        { name: "Java" },
+        { name: "Python" },
+        { name: "SQL" }
       ]
     },
     {
       title: "Frontend",
-      emoji: "🎨",
       skills: [
-        { name: "HTML", emoji: "🌐" },
-        { name: "CSS", emoji: "🎭" },
-        { name: "JavaScript", emoji: "⚡" }
+        { name: "HTML" },
+        { name: "CSS" },
+        { name: "JavaScript" }
       ]
     },
     {
       title: "Tools & Others",
-      emoji: "🛠️",
       skills: [
-        { name: "Git/GitHub", emoji: "📝" },
-        { name: "Database Management", emoji: "💾" },
-        { name: "Problem Solving", emoji: "🧩" }
+        { name: "Git/GitHub" },
+        { name: "Database Management" },
+        { name: "Problem Solving" }
       ]
     }
   ];
@@ -61,13 +58,12 @@ const Skills = () => {
         {/* Skills Section */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-5xl">🚀</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               My <span className="text-blue-600">Skills</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life ✨
+            Technologies and tools I use to bring ideas to life
           </p>
         </div>
 
@@ -77,14 +73,12 @@ const Skills = () => {
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-200 to-purple-200 rounded-bl-full -translate-y-10 translate-x-10 opacity-20 group-hover:opacity-30 transition-opacity"></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <span className="text-3xl">{category.emoji}</span>
                   <h3 className="text-xl font-bold text-gray-900 text-center">{category.title}</h3>
                 </div>
                 <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex} className="flex justify-center">
-                      <span className="text-gray-700 font-medium bg-white px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-100 flex items-center gap-2 hover:scale-105">
-                        <span>{skill.emoji}</span>
+                      <span className="text-gray-700 font-medium bg-white px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-100 hover:scale-105">
                         {skill.name}
                       </span>
                     </div>
@@ -98,13 +92,12 @@ const Skills = () => {
         {/* Achievements Section */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-5xl">🎯</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               My <span className="text-blue-600">Achievements</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Recognition and accomplishments in competitive programming 🏅
+            Recognition and accomplishments in competitive programming
           </p>
         </div>
 
@@ -126,9 +119,7 @@ const Skills = () => {
 
         <div className="text-center">
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 mx-auto">
-            <span>📄</span>
             Download Resume
-            <span>⬇️</span>
           </button>
         </div>
       </div>

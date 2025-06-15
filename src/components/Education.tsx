@@ -35,13 +35,12 @@ const Education = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-5xl">📖</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               My <span className="text-blue-600">Education</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            My academic journey and achievements that shaped my foundation in technology 🌱
+            My academic journey and achievements that shaped my foundation in technology
           </p>
         </div>
 
@@ -61,19 +60,16 @@ const Education = () => {
                         {edu.level}
                       </h3>
                     </div>
-                    <h4 className="text-xl font-semibold text-blue-600 mb-2 flex items-center gap-2">
-                      <span>🏛️</span>
+                    <h4 className="text-xl font-semibold text-blue-600 mb-2">
                       {edu.institution}
                     </h4>
                     {edu.stream && (
-                      <p className="text-lg text-gray-600 mb-2 flex items-center gap-2">
-                        <span>💻</span>
+                      <p className="text-lg text-gray-600 mb-2">
                         Stream: {edu.stream}
                       </p>
                     )}
                     {edu.year && (
-                      <p className="text-gray-500 flex items-center gap-2">
-                        <span>📅</span>
+                      <p className="text-gray-500">
                         {edu.year}
                       </p>
                     )}
@@ -81,7 +77,6 @@ const Education = () => {
                   <div className="mt-6 md:mt-0">
                     <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl text-center shadow-lg">
                       <div className="flex items-center justify-center gap-2 mb-1">
-                        <span>🏆</span>
                         <span className="text-sm font-medium uppercase tracking-wide">Score</span>
                       </div>
                       <span className="font-bold text-xl">{edu.score}</span>

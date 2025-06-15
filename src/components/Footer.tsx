@@ -7,9 +7,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub", emoji: "🐙" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", emoji: "💼" },
-    { icon: Mail, href: "mailto:sreyasri25@gmail.com", label: "Email", emoji: "📧" }
+    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:sreyasri25@gmail.com", label: "Email" }
   ];
 
   return (
@@ -26,20 +26,16 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-gray-300 mb-4">
-              Front-End Developer passionate about creating beautiful and functional web experiences ✨
+              Front-End Developer passionate about creating beautiful and functional web experiences
             </p>
             <div className="flex items-center justify-center md:justify-start gap-2 text-sm text-gray-400">
-              <span>🏠</span>
               <span>Based in Tirupati, Andhra Pradesh</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="text-2xl">🔗</span>
-              <h4 className="text-lg font-semibold">Quick Links</h4>
-            </div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <nav className="space-y-2">
               {["About", "Education", "Certifications", "Projects", "Skills", "Contact"].map((item) => (
                 <button
@@ -55,10 +51,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="text-center md:text-right">
-            <div className="flex items-center justify-center md:justify-end gap-2 mb-4">
-              <span className="text-2xl">🌐</span>
-              <h4 className="text-lg font-semibold">Connect With Me</h4>
-            </div>
+            <h4 className="text-lg font-semibold mb-4">Connect With Me</h4>
             <div className="flex justify-center md:justify-end space-x-4 mb-4">
               {socialLinks.map((social) => (
                 <a
@@ -72,7 +65,7 @@ const Footer = () => {
               ))}
             </div>
             <p className="text-gray-400 text-sm">
-              Let's build something amazing together! 🚀
+              Let's build something amazing together!
             </p>
           </div>
         </div>
@@ -84,12 +77,11 @@ const Footer = () => {
               <span>Made with</span>
               <Heart className="text-red-500 fill-current animate-pulse" size={16} />
               <span>by Chinni Sreya Sri</span>
-              <span>✨</span>
             </div>
             
             <div className="flex items-center space-x-4">
               <p className="text-gray-400 text-sm">
-                © 2024 All rights reserved. 📝
+                © 2024 All rights reserved.
               </p>
               <button
                 onClick={scrollToTop}

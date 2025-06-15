@@ -36,13 +36,12 @@ const Certifications = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-5xl">🏅</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               My <span className="text-blue-600">Certifications</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Professional certifications that validate my technical expertise 🎯
+            Professional certifications that validate my technical expertise
           </p>
         </div>
 
@@ -67,8 +66,7 @@ const Certifications = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-1">
                       {cert.title}
                     </h3>
-                    <p className="text-blue-600 font-semibold flex items-center gap-1">
-                      <span>🏛️</span>
+                    <p className="text-blue-600 font-semibold">
                       {cert.provider}
                     </p>
                   </div>
@@ -79,7 +77,7 @@ const Certifications = () => {
                       <span className="text-green-600 font-medium">✅ Certified</span>
                     </div>
                     <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">
-                      <span>🔒</span> Verified
+                      Verified
                     </div>
                   </div>
                 </div>
@@ -90,9 +88,7 @@ const Certifications = () => {
 
         <div className="text-center mt-12">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-3 rounded-full border border-blue-200">
-            <span>🎯</span>
             <span className="text-gray-700 font-medium">Continuously learning and growing</span>
-            <span>📈</span>
           </div>
         </div>
       </div>

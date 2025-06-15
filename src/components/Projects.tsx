@@ -14,8 +14,7 @@ const Projects = () => {
       tech: ["React", "TypeScript", "Tailwind CSS", "Redux"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: true,
-      emoji: "🛒"
+      featured: true
     },
     {
       id: 2,
@@ -25,8 +24,7 @@ const Projects = () => {
       tech: ["JavaScript", "CSS3", "Weather API", "Chart.js"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: false,
-      emoji: "🌤️"
+      featured: false
     },
     {
       id: 3,
@@ -36,8 +34,7 @@ const Projects = () => {
       tech: ["React", "Node.js", "MongoDB", "Socket.io"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: true,
-      emoji: "📋"
+      featured: true
     }
   ];
 
@@ -46,13 +43,12 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-5xl">💼</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Featured <span className="text-blue-600">Projects</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills in front-end development 🚀
+            Here are some of my recent projects that showcase my skills in front-end development
           </p>
         </div>
 
@@ -100,10 +96,7 @@ const Projects = () => {
               </div>
               
               <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-2xl">{project.emoji}</span>
-                  <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
                 <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
@@ -122,9 +115,7 @@ const Projects = () => {
 
         <div className="text-center mt-12">
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 mx-auto">
-            <span>👀</span>
             View All Projects
-            <span>→</span>
           </button>
         </div>
       </div>
