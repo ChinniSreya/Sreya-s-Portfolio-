@@ -44,7 +44,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Featured <span className="text-green-600">Projects</span>
+              Featured <span className="text-blue-600">Projects</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -61,7 +61,7 @@ const Projects = () => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               {project.featured && (
-                <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
                   <Star size={14} />
                   Featured
                 </div>
@@ -73,20 +73,20 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br from-green-600/90 to-orange-600/90 flex items-center justify-center transition-opacity duration-300 ${
+                <div className={`absolute inset-0 bg-gradient-to-br from-blue-600/90 to-indigo-600/90 flex items-center justify-center transition-opacity duration-300 ${
                   hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
                 }`}>
                   <div className="flex space-x-4">
                     <a
                       href={project.liveUrl}
-                      className="bg-white text-green-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+                      className="bg-white text-blue-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       title="View Live Demo"
                     >
                       <ExternalLink size={20} />
                     </a>
                     <a
                       href={project.githubUrl}
-                      className="bg-white text-green-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+                      className="bg-white text-blue-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       title="View Source Code"
                     >
                       <Github size={20} />
@@ -102,7 +102,7 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-gradient-to-r from-green-100 to-orange-100 text-green-800 text-sm px-3 py-1 rounded-full border border-green-200"
+                      className="bg-gradient-to-r from-blue-100 to-slate-100 text-blue-800 text-sm px-3 py-1 rounded-full border border-blue-200"
                     >
                       {tech}
                     </span>
@@ -114,7 +114,7 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-green-600 to-orange-600 hover:from-green-700 hover:to-orange-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 mx-auto">
+          <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 mx-auto">
             View All Projects
           </button>
         </div>

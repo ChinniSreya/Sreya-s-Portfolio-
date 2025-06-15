@@ -34,12 +34,12 @@ const Navigation = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300"
               >
                 {item.name}
               </button>
             ))}
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
               Download Resume
             </button>
           </div>
@@ -47,7 +47,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-green-600 transition-colors duration-300"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -61,12 +61,12 @@ const Navigation = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 text-left"
+                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 text-left"
                 >
                   {item.name}
                 </button>
               ))}
-              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 w-full">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 w-full">
                 Download Resume
               </button>
             </div>
