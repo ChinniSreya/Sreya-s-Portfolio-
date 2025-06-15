@@ -71,7 +71,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Location</h4>
-                  <p className="text-gray-600">Available for remote work</p>
+                  <p className="text-gray-600">Tirupati, Andhra Pradesh</p>
                 </div>
               </div>
             </div>
