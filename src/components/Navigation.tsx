@@ -9,6 +9,7 @@ const Navigation = () => {
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
+    { name: "Education", href: "#education" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" }
   ];
@@ -22,10 +23,10 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="max-w-6xl mx-auto px-6">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="font-bold text-xl text-gray-900">
+          <div className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Sreya Sri
           </div>
 
@@ -34,10 +35,10 @@ const Navigation = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative group"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative group"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </div>
@@ -53,13 +54,13 @@ const Navigation = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-gray-200 bg-white/95 backdrop-blur-md">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 text-left"
+                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 text-left py-2"
                 >
                   {item.name}
                 </button>

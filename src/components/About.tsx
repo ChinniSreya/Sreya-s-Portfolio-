@@ -1,21 +1,24 @@
 
 const About = () => {
   return (
-    <section id="about" className="py-20 px-6 bg-gray-50">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             About Me
           </h2>
-          <div className="w-16 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              I'm a passionate Frontend Developer
+            </h3>
             <p className="text-lg text-gray-700 leading-relaxed">
               I'm a passionate Front-End Developer with expertise in creating modern, 
               responsive web applications. I love transforming ideas into beautiful, 
-              functional digital experiences.
+              functional digital experiences that users enjoy.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               My journey in web development is driven by curiosity and a commitment 
@@ -23,20 +26,20 @@ const About = () => {
               and best practices to deliver high-quality solutions.
             </p>
             
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+              <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Name:</h4>
                 <p className="text-gray-700">Chinni Sreya Sri</p>
               </div>
-              <div>
+              <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Location:</h4>
                 <p className="text-gray-700">Tirupati, AP</p>
               </div>
-              <div>
+              <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Email:</h4>
                 <p className="text-gray-700">sreyasri25@gmail.com</p>
               </div>
-              <div>
+              <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Phone:</h4>
                 <p className="text-gray-700">+91 9700357668</p>
               </div>
@@ -44,16 +47,13 @@ const About = () => {
           </div>
           
           <div className="relative">
-            <div className="bg-blue-600 rounded-lg p-1">
-              <div className="bg-white rounded-lg p-6 h-full">
-                <div className="bg-gray-100 rounded-lg overflow-hidden h-96">
-                  <img 
-                    src="/lovable-uploads/41653eaf-ad4d-44f5-b7de-774252011e93.png"
-                    alt="Chinni Sreya Sri"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <img 
+                src="/lovable-uploads/41653eaf-ad4d-44f5-b7de-774252011e93.png"
+                alt="Chinni Sreya Sri"
+                className="w-full h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
             </div>
           </div>
         </div>

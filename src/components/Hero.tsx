@@ -1,42 +1,50 @@
 
-import { ArrowDown, MessageCircle } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import Navigation from "./Navigation";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col bg-white">
+    <section id="home" className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Navigation />
-      <div className="flex-1 flex items-center justify-center px-6 pt-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="animate-fade-in">
-            <div className="mb-8">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Hi, I'm <span className="text-blue-600">Chinni Sreya Sri</span>
+      <div className="flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center pt-20">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
+                Hi, I'm{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Chinni Sreya Sri
+                </span>
               </h1>
-            </div>
-            <div className="mb-6">
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-                Front-End Developer & UI/UX Enthusiast
+              <p className="text-xl sm:text-2xl text-gray-700 font-medium">
+                Frontend Developer & UI/UX Designer
               </p>
             </div>
-            <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-              I create beautiful, responsive web applications with modern technologies and clean code.
+            
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              I craft beautiful, responsive web applications with modern technologies and clean code. 
+              Passionate about creating exceptional user experiences.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <button 
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 View My Work
               </button>
               <button 
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2"
+                className="border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
               >
-                <MessageCircle size={20} />
-                Contact Me
+                <Download size={20} />
+                Download CV
               </button>
             </div>
+          </div>
+          
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <ArrowDown size={24} className="text-gray-400" />
           </div>
         </div>
       </div>
