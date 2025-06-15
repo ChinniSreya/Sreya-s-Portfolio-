@@ -51,15 +51,13 @@ const About = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl p-1">
               <div className="bg-white rounded-2xl p-8 h-full">
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden relative">
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden relative h-96">
                   <img 
                     src="/lovable-uploads/41653eaf-ad4d-44f5-b7de-774252011e93.png"
                     alt="Chinni Sreya Sri - Front-End Developer"
                     className="w-full h-full object-cover object-center"
                   />
-                  <div className="absolute top-4 right-4 bg-white/90 rounded-full p-2">
-                    <span className="text-2xl">👩‍💻</span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
               </div>
             </div>
