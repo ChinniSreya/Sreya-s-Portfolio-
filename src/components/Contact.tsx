@@ -1,4 +1,3 @@
-
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 
@@ -23,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section id="contact" className="py-20 px-6 bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
