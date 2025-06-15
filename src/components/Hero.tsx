@@ -37,7 +37,7 @@ const Hero = () => {
                 <span className="font-medium">LinkedIn</span>
               </a>
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/ChinniSreya"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-300"
