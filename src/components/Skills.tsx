@@ -2,31 +2,27 @@
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Programming Languages",
       skills: [
-        { name: "React", level: 90 },
+        { name: "Java", level: 85 },
         { name: "JavaScript", level: 88 },
-        { name: "TypeScript", level: 85 },
-        { name: "HTML5", level: 95 },
-        { name: "CSS3", level: 92 }
+        { name: "SQL", level: 80 }
       ]
     },
     {
-      title: "Styling",
+      title: "Frontend",
       skills: [
-        { name: "Tailwind CSS", level: 90 },
-        { name: "Sass/SCSS", level: 85 },
-        { name: "Bootstrap", level: 80 },
-        { name: "Styled Components", level: 75 }
+        { name: "HTML", level: 95 },
+        { name: "CSS", level: 92 },
+        { name: "JavaScript", level: 88 }
       ]
     },
     {
       title: "Tools & Others",
       skills: [
-        { name: "Git/GitHub", level: 88 },
-        { name: "Figma", level: 82 },
-        { name: "Webpack", level: 75 },
-        { name: "REST APIs", level: 85 }
+        { name: "Git/GitHub", level: 85 },
+        { name: "Database Management", level: 80 },
+        { name: "Problem Solving", level: 90 }
       ]
     }
   ];
