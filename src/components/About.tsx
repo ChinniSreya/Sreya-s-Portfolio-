@@ -46,14 +46,14 @@ const About = () => {
             </div>
           </div>
           
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+          <div className="relative flex justify-center">
+            <div className="relative overflow-hidden rounded-full shadow-xl w-80 h-80">
               <img 
                 src="/lovable-uploads/41653eaf-ad4d-44f5-b7de-774252011e93.png"
                 alt="Chinni Sreya Sri"
-                className="w-full h-96 object-cover"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-full"></div>
             </div>
           </div>
         </div>
