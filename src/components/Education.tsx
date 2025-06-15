@@ -20,7 +20,7 @@ const Education = () => {
     {
       level: "Secondary Education",
       institution: "Padmavathi Vidyalaya",
-      stream: "General Studies",
+      stream: "Central Board of Secondary Education",
       score: "80.4%",
       year: "2020",
       status: "Completed"

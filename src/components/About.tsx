@@ -1,3 +1,4 @@
+
 const About = () => {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -15,34 +16,17 @@ const About = () => {
               I'm an enthusiastic Frontend Developer
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed">
-              I'm a passionate Front-End Developer who loves crafting beautiful, responsive, 
-              and user-friendly web interfaces. I enjoy transforming ideas into beautiful, 
-              functional digital experiences that users love.
+              I'm a passionate and dedicated Frontend Developer with a strong foundation in modern web technologies. 
+              I specialize in creating responsive, user-friendly interfaces using React, TypeScript, and cutting-edge CSS frameworks.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              My journey in web development is driven by curiosity and a commitment 
-              to continuous learning. I enjoy working with the latest technologies 
-              and best practices to deliver high-quality solutions.
+              My expertise extends to building AI-powered applications, browser extensions, and innovative web solutions. 
+              I'm constantly exploring new technologies and methodologies to deliver exceptional user experiences and scalable applications.
             </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2">Name:</h4>
-                <p className="text-gray-700">Chinni Sreya Sri</p>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2">Location:</h4>
-                <p className="text-gray-700">Tirupati, AP</p>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2">Email:</h4>
-                <p className="text-gray-700">sreyasri25@gmail.com</p>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2">Phone:</h4>
-                <p className="text-gray-700">+91 9700357668</p>
-              </div>
-            </div>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              I believe in writing clean, maintainable code and staying updated with the latest industry trends. 
+              My goal is to bridge the gap between design and functionality, creating digital solutions that are both beautiful and performant.
+            </p>
           </div>
           
           <div className="relative flex justify-center">
