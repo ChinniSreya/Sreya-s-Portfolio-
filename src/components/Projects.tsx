@@ -1,8 +1,10 @@
+
 import { useState } from "react";
-import { ExternalLink, Github, Star } from "lucide-react";
+import { ExternalLink, Github, Star, X } from "lucide-react";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [selectedDemo, setSelectedDemo] = useState<string | null>(null);
 
   const projects = [
     {
@@ -11,8 +13,8 @@ const Projects = () => {
       description: "An intelligent text summarization tool powered by advanced AI algorithms that can condense long articles, documents, and content into concise, meaningful summaries while preserving key information.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop",
       tech: ["React", "TypeScript", "AI API", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://ai-text-summarizer-demo.vercel.app",
+      githubUrl: "https://github.com/ChinniSreya/ai-text-summarizer",
       featured: true
     },
     {
@@ -21,8 +23,8 @@ const Projects = () => {
       description: "A comprehensive interview preparation platform that uses AI to conduct mock interviews, provide real-time feedback, and help candidates improve their interview performance with personalized insights.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop",
       tech: ["React", "AI Integration", "WebRTC", "Node.js"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://ai-interview-assistant-demo.vercel.app",
+      githubUrl: "https://github.com/ChinniSreya/ai-interview-assistant",
       featured: true
     },
     {
@@ -31,11 +33,19 @@ const Projects = () => {
       description: "A browser security extension that uses machine learning to detect and prevent phishing attacks in real-time, protecting users from malicious websites and suspicious links.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
       tech: ["JavaScript", "Chrome API", "Machine Learning", "CSS3"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://phishing-detector-demo.vercel.app",
+      githubUrl: "https://github.com/ChinniSreya/phishing-detector",
       featured: false
     }
   ];
+
+  const openLiveDemo = (url: string) => {
+    setSelectedDemo(url);
+  };
+
+  const closeLiveDemo = () => {
+    setSelectedDemo(null);
+  };
 
   return (
     <section id="projects" className="py-20 px-6 bg-gray-50">
@@ -73,15 +83,17 @@ const Projects = () => {
                   hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
                 }`}>
                   <div className="flex space-x-4">
-                    <a
-                      href={project.liveUrl}
+                    <button
+                      onClick={() => openLiveDemo(project.liveUrl)}
                       className="bg-white text-blue-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       title="View Live Demo"
                     >
                       <ExternalLink size={20} />
-                    </a>
+                    </button>
                     <a
                       href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-white text-blue-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       title="View Source Code"
                     >
@@ -109,11 +121,30 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 mx-auto">
-            View All Projects
-          </button>
-        </div>
+        {/* Live Demo Modal */}
+        {selectedDemo && (
+          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl w-full max-w-6xl h-full max-h-[90vh] flex flex-col">
+              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900">Live Demo</h3>
+                <button
+                  onClick={closeLiveDemo}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-300"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              <div className="flex-1 p-6">
+                <iframe
+                  src={selectedDemo}
+                  className="w-full h-full rounded-lg border border-gray-200"
+                  title="Live Demo"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
