@@ -1,4 +1,3 @@
-
 const Education = () => {
   const educationData = [
     {
@@ -8,7 +7,7 @@ const Education = () => {
       score: "CGPA: 9.27",
       type: "cgpa",
       emoji: "🎓",
-      year: "2021-2025"
+      year: "2022-2026"
     },
     {
       level: "Intermediate",
@@ -17,7 +16,7 @@ const Education = () => {
       score: "93.2%",
       type: "percentage",
       emoji: "📚",
-      year: "2019-2021"
+      year: "2020-2022"
     },
     {
       level: "Primary School",
