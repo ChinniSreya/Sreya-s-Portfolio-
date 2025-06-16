@@ -120,26 +120,8 @@ const Certifications = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">4+</div>
-              <div className="text-gray-600">Certifications Earned</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">3</div>
-              <div className="text-gray-600">Technology Domains</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
-              <div className="text-gray-600">Commitment to Learning</div>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Message */}
-        <div className="text-center mt-12">
+        <div className="text-center">
           <div className="inline-flex items-center gap-3 bg-blue-50 px-6 py-4 rounded-lg border border-blue-100">
             <Award className="text-blue-600" size={20} />
             <span className="text-blue-800 font-medium">
