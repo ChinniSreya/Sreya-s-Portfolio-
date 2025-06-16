@@ -1,30 +1,31 @@
+
 const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend Technologies",
       skills: [
-        { name: "HTML5", level: 90 },
-        { name: "CSS3", level: 85 },
-        { name: "JavaScript", level: 80 },
-        { name: "React", level: 75 }
+        { name: "HTML5" },
+        { name: "CSS3" },
+        { name: "JavaScript" },
+        { name: "React" }
       ]
     },
     {
       title: "Programming Languages",
       skills: [
-        { name: "C", level: 85 },
-        { name: "Java", level: 80 },
-        { name: "Python", level: 75 },
-        { name: "SQL", level: 70 }
+        { name: "C" },
+        { name: "Java" },
+        { name: "Python" },
+        { name: "SQL" }
       ]
     },
     {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git/GitHub", level: 85 },
-        { name: "VS Code", level: 90 },
-        { name: "Responsive Design", level: 85 },
-        { name: "Database Management", level: 70 }
+        { name: "Git/GitHub" },
+        { name: "VS Code" },
+        { name: "Responsive Design" },
+        { name: "Database Management" }
       ]
     }
   ];
@@ -67,18 +68,10 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
               <h3 className="text-xl font-bold text-gray-900 mb-8 text-center">{category.title}</h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                  <div key={skillIndex} className="bg-gray-50 rounded-lg px-4 py-3 text-center">
+                    <span className="text-gray-700 font-medium">{skill.name}</span>
                   </div>
                 ))}
               </div>

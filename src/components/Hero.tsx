@@ -17,13 +17,13 @@ const Hero = () => {
                 </span>
               </h1>
               <p className="text-xl sm:text-2xl text-gray-700 font-medium">
-                Frontend Developer & UI/UX Designer
+                Enthusiastic Front-End Developer
               </p>
             </div>
             
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              I craft beautiful, responsive web applications with modern technologies and clean code. 
-              Passionate about creating exceptional user experiences.
+              A passionate Front-End Developer who loves crafting beautiful, responsive, and user-friendly web interfaces. 
+              Dedicated to creating exceptional digital experiences.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
@@ -38,7 +38,7 @@ const Hero = () => {
                 className="border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
               >
                 <Download size={20} />
-                Download CV
+                Download Resume
               </button>
             </div>
           </div>

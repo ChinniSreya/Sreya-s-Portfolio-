@@ -1,5 +1,3 @@
-
-
 const About = () => {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -14,12 +12,12 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              I'm a passionate Frontend Developer
+              I'm an enthusiastic Frontend Developer
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed">
-              I'm a passionate Front-End Developer with expertise in creating modern, 
-              responsive web applications. I love transforming ideas into beautiful, 
-              functional digital experiences that users enjoy.
+              I'm a passionate Front-End Developer who loves crafting beautiful, responsive, 
+              and user-friendly web interfaces. I enjoy transforming ideas into beautiful, 
+              functional digital experiences that users love.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               My journey in web development is driven by curiosity and a commitment 
@@ -66,4 +64,3 @@ const About = () => {
 };
 
 export default About;
-
