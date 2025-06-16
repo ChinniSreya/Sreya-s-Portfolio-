@@ -32,13 +32,12 @@ const About = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl p-1">
               <div className="bg-white rounded-2xl p-8 h-full">
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl h-64 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-white text-2xl font-bold">CS</span>
-                    </div>
-                    <p className="text-gray-600">Your photo here</p>
-                  </div>
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/41653eaf-ad4d-44f5-b7de-774252011e93.png"
+                    alt="Chinni Sreya Sri - Front-End Developer"
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
               </div>
             </div>
