@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ExternalLink, Github, Star } from "lucide-react";
 
@@ -47,9 +46,6 @@ const Projects = () => {
               Featured <span className="text-blue-600">Projects</span>
             </h2>
           </div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills in front-end development
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
