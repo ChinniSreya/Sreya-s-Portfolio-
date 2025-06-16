@@ -1,4 +1,3 @@
-
 import { Code, Palette, Zap, Heart } from "lucide-react";
 
 const About = () => {
@@ -81,12 +80,12 @@ const About = () => {
             </div>
           </div>
           
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
+          <div className="relative flex justify-center">
+            <div className="relative overflow-hidden rounded-full shadow-2xl transform hover:scale-105 transition-transform duration-500 w-96 h-96">
               <img 
                 src="/lovable-uploads/f929749c-dcad-4503-9d6d-a1ea12358485.png"
                 alt="Chinni Sreya Sri"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-transparent to-transparent"></div>
             </div>
