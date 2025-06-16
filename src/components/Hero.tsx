@@ -1,5 +1,5 @@
 
-import { ArrowDown, Download, MessageCircle } from "lucide-react";
+import { ArrowDown, MessageCircle } from "lucide-react";
 import Navigation from "./Navigation";
 
 const Hero = () => {
@@ -10,15 +10,6 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
             <div className="mb-8">
-              <div className="w-32 h-32 mx-auto mb-8 relative">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-600 to-purple-600 p-1">
-                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                      <span className="text-3xl font-bold text-blue-600">CS</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Chinni Sreya Sri
