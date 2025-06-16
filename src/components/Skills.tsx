@@ -2,31 +2,28 @@
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Programming Languages",
       skills: [
-        { name: "React", level: 90 },
-        { name: "JavaScript", level: 88 },
-        { name: "TypeScript", level: 85 },
-        { name: "HTML5", level: 95 },
-        { name: "CSS3", level: 92 }
+        { name: "C" },
+        { name: "Java" },
+        { name: "Python" },
+        { name: "SQL" }
       ]
     },
     {
-      title: "Styling",
+      title: "Frontend",
       skills: [
-        { name: "Tailwind CSS", level: 90 },
-        { name: "Sass/SCSS", level: 85 },
-        { name: "Bootstrap", level: 80 },
-        { name: "Styled Components", level: 75 }
+        { name: "HTML" },
+        { name: "CSS" },
+        { name: "JavaScript" }
       ]
     },
     {
       title: "Tools & Others",
       skills: [
-        { name: "Git/GitHub", level: 88 },
-        { name: "Figma", level: 82 },
-        { name: "Webpack", level: 75 },
-        { name: "REST APIs", level: 85 }
+        { name: "Git/GitHub" },
+        { name: "Database Management" },
+        { name: "Problem Solving" }
       ]
     }
   ];
@@ -36,7 +33,7 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Skills & <span className="text-blue-600">Expertise</span>
+            My <span className="text-blue-600">Skills</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Technologies and tools I use to bring ideas to life
@@ -47,19 +44,12 @@ const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">{category.title}</h3>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-blue-600 font-medium">{skill.level}%</span>
-                    </div>
-                    <div className="bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                  <div key={skillIndex} className="flex justify-center">
+                    <span className="text-gray-700 font-medium bg-white px-4 py-2 rounded-lg shadow-sm">
+                      {skill.name}
+                    </span>
                   </div>
                 ))}
               </div>
