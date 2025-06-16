@@ -12,7 +12,6 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission here
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -44,12 +43,12 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section id="contact" className="py-20 px-6 bg-gradient-to-br from-green-50 to-orange-100">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Let's <span className="text-blue-600">Connect</span>
+              Let's <span className="text-green-600">Connect</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -70,20 +69,20 @@ const Contact = () => {
 
               <div className="space-y-6">
                 {contactMethods.map((method, index) => (
-                  <div key={index} className="flex items-center space-x-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100 hover:shadow-md transition-all duration-300">
-                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-xl shadow-lg">
+                  <div key={index} className="flex items-center space-x-4 p-4 bg-gradient-to-r from-green-50 to-orange-50 rounded-xl border border-green-100 hover:shadow-md transition-all duration-300">
+                    <div className="bg-gradient-to-r from-green-600 to-orange-600 p-3 rounded-xl shadow-lg">
                       <method.icon className="text-white" size={24} />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-900 mb-1">{method.title}</h4>
-                      <p className="text-blue-600 font-medium">{method.value}</p>
+                      <p className="text-green-600 font-medium">{method.value}</p>
                       <p className="text-sm text-gray-500">{method.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl border border-green-200">
+              <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
                 <h4 className="font-bold text-gray-900 mb-2">Quick Response</h4>
                 <p className="text-gray-600 text-sm">I typically respond within 24 hours!</p>
               </div>
@@ -106,7 +105,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 hover:border-green-300"
                   placeholder="Enter your name"
                   required
                 />
@@ -122,7 +121,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 hover:border-green-300"
                   placeholder="Enter your email"
                   required
                 />
@@ -138,7 +137,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none hover:border-blue-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none hover:border-green-300"
                   placeholder="Tell me about your project..."
                   required
                 />
@@ -146,14 +145,14 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                className="w-full bg-gradient-to-r from-green-600 to-orange-600 hover:from-green-700 hover:to-orange-700 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
               >
                 <Send size={20} />
                 <span>Send Message</span>
               </button>
             </form>
 
-            <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100">
+            <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-orange-50 rounded-xl border border-green-100">
               <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
                 <span>🔒</span>
                 <span>Your information is safe and secure</span>

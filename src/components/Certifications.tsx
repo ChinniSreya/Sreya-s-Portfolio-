@@ -12,21 +12,21 @@ const Certifications = () => {
       title: "AWS Certified Developer",
       provider: "Infosys SpringBoard",
       category: "Cloud Computing",
-      color: "from-blue-400 to-indigo-500",
+      color: "from-green-400 to-emerald-500",
       skills: ["AWS Services", "Cloud Architecture", "DevOps"]
     },
     {
       title: "Web Development",
       provider: "Internshala Trainings",
       category: "Frontend Development",
-      color: "from-green-400 to-teal-500",
+      color: "from-emerald-400 to-teal-500",
       skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design"]
     },
     {
       title: "ServiceNow Micro Certifications",
       provider: "ServiceNow",
       category: "Platform Development",
-      color: "from-purple-400 to-pink-500",
+      color: "from-orange-400 to-amber-500",
       skills: ["Platform Configuration", "Workflow Automation", "ITSM"]
     }
   ];
@@ -36,7 +36,7 @@ const Certifications = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Professional <span className="text-blue-600">Certifications</span>
+            Professional <span className="text-green-600">Certifications</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Industry-recognized certifications that validate my technical expertise and commitment to continuous learning
@@ -47,7 +47,7 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-blue-100 relative overflow-hidden group"
+              className="bg-gradient-to-br from-green-50 to-orange-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-green-100 relative overflow-hidden group"
             >
               <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${cert.color} rounded-bl-full -translate-y-12 translate-x-12 opacity-10 group-hover:opacity-20 transition-opacity`}></div>
               <div className="relative z-10">
@@ -61,11 +61,11 @@ const Certifications = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {cert.title}
                     </h3>
-                    <p className="text-blue-600 font-semibold mb-4">
+                    <p className="text-green-600 font-semibold mb-4">
                       {cert.provider}
                     </p>
                   </div>
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-orange-600 rounded-xl flex items-center justify-center">
                     <span className="text-white font-bold text-lg">✓</span>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ const Certifications = () => {
                   <h4 className="font-semibold text-gray-900 mb-2">Key Skills Acquired:</h4>
                   <div className="flex flex-wrap gap-2">
                     {cert.skills.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                      <span key={skillIndex} className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
                         {skill}
                       </span>
                     ))}
@@ -85,7 +85,7 @@ const Certifications = () => {
                   <div className="flex items-center gap-2">
                     <span className="text-green-600 font-medium">Certified</span>
                   </div>
-                  <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                  <div className="bg-gradient-to-r from-green-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm">
                     Verified
                   </div>
                 </div>
@@ -95,7 +95,7 @@ const Certifications = () => {
         </div>
 
         <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-3 rounded-full border border-blue-200">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-50 to-orange-50 px-6 py-3 rounded-full border border-green-200">
             <span className="text-gray-700 font-medium">Continuously expanding my skillset through professional development</span>
           </div>
         </div>
