@@ -1,4 +1,5 @@
-import { Award, CheckCircle } from "lucide-react";
+
+import { Award, CheckCircle, Calendar, Building } from "lucide-react";
 
 const Certifications = () => {
   const certifications = [
@@ -6,6 +7,7 @@ const Certifications = () => {
       title: "Java Fundamentals",
       provider: "Coursera",
       category: "Programming",
+      date: "2023",
       color: "from-orange-400 to-red-500",
       skills: ["Object-Oriented Programming", "Data Structures", "Algorithms"]
     },
@@ -13,6 +15,7 @@ const Certifications = () => {
       title: "AWS Certified Developer",
       provider: "Infosys SpringBoard",
       category: "Cloud Computing",
+      date: "2023",
       color: "from-blue-400 to-indigo-500",
       skills: ["AWS Services", "Cloud Architecture", "DevOps"]
     },
@@ -20,6 +23,7 @@ const Certifications = () => {
       title: "Web Development",
       provider: "Internshala Trainings",
       category: "Frontend Development",
+      date: "2022",
       color: "from-green-400 to-teal-500",
       skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design"]
     },
@@ -27,76 +31,88 @@ const Certifications = () => {
       title: "ServiceNow Micro Certification",
       provider: "ServiceNow",
       category: "Platform Development",
+      date: "2023",
       color: "from-purple-400 to-pink-500",
       skills: ["Platform Configuration", "Workflow Automation", "ITSM"]
     }
   ];
 
   return (
-    <section id="certifications" className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Award className="text-blue-600" size={32} />
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Certifications
-            </h2>
+    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center mb-4">
+            <div className="bg-blue-600 p-3 rounded-full">
+              <Award className="text-white" size={28} />
+            </div>
           </div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Professional certifications that showcase my expertise and commitment to continuous learning
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Professional Certifications
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Validated expertise through industry-recognized certifications and continuous professional development
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Certifications Grid */}
+        <div className="grid lg:grid-cols-2 gap-6 mb-12">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden group"
+              className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 overflow-hidden group"
             >
-              {/* Header with gradient */}
-              <div className={`h-2 bg-gradient-to-r ${cert.color}`}></div>
-              
-              <div className="p-8">
-                {/* Category Badge */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                    {cert.category}
-                  </span>
-                  <div className={`p-2 rounded-lg bg-gradient-to-r ${cert.color}`}>
-                    <CheckCircle className="text-white" size={20} />
-                  </div>
-                </div>
-
-                {/* Title and Provider */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    {cert.title}
-                  </h3>
-                  <p className="text-blue-600 font-semibold text-lg">
-                    {cert.provider}
-                  </p>
-                </div>
-
-                {/* Skills */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wide">
-                    Key Skills
-                  </h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {cert.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex} className="flex items-center gap-2">
-                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${cert.color}`}></div>
-                        <span className="text-sm text-gray-600">{skill}</span>
+              {/* Card Header */}
+              <div className="p-6 border-b border-gray-100">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${cert.color} flex items-center justify-center`}>
+                        <CheckCircle className="text-white" size={24} />
                       </div>
-                    ))}
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {cert.title}
+                        </h3>
+                        <div className="flex items-center gap-4 text-sm text-gray-500 mt-1">
+                          <div className="flex items-center gap-1">
+                            <Building size={14} />
+                            <span>{cert.provider}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Calendar size={14} />
+                            <span>{cert.date}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+                      {cert.category}
+                    </span>
                   </div>
                 </div>
+              </div>
 
-                {/* Status Badge */}
-                <div className="flex justify-end">
-                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${cert.color} text-white text-sm font-medium shadow-sm`}>
-                    <CheckCircle size={16} />
-                    Certified
+              {/* Card Content */}
+              <div className="p-6">
+                <h4 className="font-medium text-gray-900 mb-3">Key Competencies</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {cert.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex} className="flex items-center gap-2">
+                      <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${cert.color}`}></div>
+                      <span className="text-sm text-gray-600">{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card Footer */}
+              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-500">Status</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-sm font-medium text-green-700">Certified</span>
                   </div>
                 </div>
               </div>
@@ -104,12 +120,30 @@ const Certifications = () => {
           ))}
         </div>
 
+        {/* Stats Section */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2">4+</div>
+              <div className="text-gray-600">Certifications Earned</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-600 mb-2">3</div>
+              <div className="text-gray-600">Technology Domains</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
+              <div className="text-gray-600">Commitment to Learning</div>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Message */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-3 bg-white px-8 py-4 rounded-2xl shadow-md border border-gray-100">
-            <Award className="text-blue-600" size={24} />
-            <span className="text-gray-700 font-medium text-lg">
-              Continuously expanding expertise through professional development
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center gap-3 bg-blue-50 px-6 py-4 rounded-lg border border-blue-100">
+            <Award className="text-blue-600" size={20} />
+            <span className="text-blue-800 font-medium">
+              Continuously expanding expertise through professional development and industry certifications
             </span>
           </div>
         </div>
