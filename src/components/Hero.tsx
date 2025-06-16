@@ -28,7 +28,7 @@ const Hero = () => {
 
             <div className="flex justify-center gap-6 pt-4">
               <a
-                href="https://linkedin.com/in/your-profile"
+                href="https://www.linkedin.com/in/chinni-sreya-sri-779514249"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors duration-300"
