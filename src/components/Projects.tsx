@@ -8,33 +8,33 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce website built with React and TypeScript, featuring dynamic product filtering, shopping cart functionality, and responsive design.",
+      title: "AI Text Summarizer",
+      description: "An intelligent text summarization tool powered by advanced AI algorithms that can condense long articles, documents, and content into concise, meaningful summaries while preserving key information.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Redux"],
+      tech: ["React", "TypeScript", "AI API", "Tailwind CSS"],
       liveUrl: "#",
       githubUrl: "#",
       featured: true
     },
     {
       id: 2,
-      title: "Weather Dashboard",
-      description: "An interactive weather application that provides real-time weather data with beautiful animations and location-based forecasts.",
+      title: "AI Powered Interview Assistant",
+      description: "A comprehensive interview preparation platform that uses AI to conduct mock interviews, provide real-time feedback, and help candidates improve their interview performance with personalized insights.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop",
-      tech: ["JavaScript", "CSS3", "Weather API", "Chart.js"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      id: 3,
-      title: "Task Management App",
-      description: "A productivity app with drag-and-drop functionality, real-time updates, and collaborative features for team project management.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
-      tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+      tech: ["React", "AI Integration", "WebRTC", "Node.js"],
       liveUrl: "#",
       githubUrl: "#",
       featured: true
+    },
+    {
+      id: 3,
+      title: "Chrome Extension for Phishing Detection",
+      description: "A browser security extension that uses machine learning to detect and prevent phishing attacks in real-time, protecting users from malicious websites and suspicious links.",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
+      tech: ["JavaScript", "Chrome API", "Machine Learning", "CSS3"],
+      liveUrl: "#",
+      githubUrl: "#",
+      featured: false
     }
   ];
 

@@ -10,6 +10,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center pt-20">
           <div className="space-y-8">
             <div className="space-y-4">
+              <p className="text-sm text-gray-500 font-medium">Frontend Enthusiastic Developer</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
