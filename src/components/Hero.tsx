@@ -1,5 +1,5 @@
 
-import { ArrowDown, Download } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
 import Navigation from "./Navigation";
 
 const Hero = () => {
@@ -25,6 +25,27 @@ const Hero = () => {
               A passionate Front-End Developer who loves crafting beautiful, responsive, and user-friendly web interfaces. 
               Dedicated to creating exceptional digital experiences.
             </p>
+
+            <div className="flex justify-center gap-6 pt-4">
+              <a
+                href="https://linkedin.com/in/your-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+              >
+                <Linkedin size={24} />
+                <span className="font-medium">LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/your-username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-300"
+              >
+                <Github size={24} />
+                <span className="font-medium">GitHub</span>
+              </a>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <button 
