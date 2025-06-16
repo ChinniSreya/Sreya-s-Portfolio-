@@ -80,8 +80,8 @@ const About = () => {
             </div>
           </div>
           
-          <div className="relative flex justify-center">
-            <div className="relative overflow-hidden rounded-full shadow-2xl transform hover:scale-105 transition-transform duration-500 w-96 h-96">
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-full shadow-2xl transform hover:scale-105 transition-transform duration-500 w-96 h-96 mx-auto">
               <img 
                 src="/lovable-uploads/f929749c-dcad-4503-9d6d-a1ea12358485.png"
                 alt="Chinni Sreya Sri"
