@@ -1,4 +1,5 @@
 
+
 const About = () => {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -47,13 +48,15 @@ const About = () => {
           </div>
           
           <div className="relative flex justify-center">
-            <div className="relative overflow-hidden rounded-full shadow-xl w-80 h-80">
-              <img 
-                src="/lovable-uploads/41653eaf-ad4d-44f5-b7de-774252011e93.png"
-                alt="Chinni Sreya Sri"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-full"></div>
+            <div className="relative">
+              <div className="w-96 h-96 rounded-full overflow-hidden shadow-2xl ring-8 ring-blue-100 hover:ring-blue-200 transition-all duration-300 transform hover:scale-105">
+                <img 
+                  src="/lovable-uploads/b5a29d4e-e8f9-4cc2-9fbd-40f228ca3427.png"
+                  alt="Chinni Sreya Sri"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-xl opacity-70"></div>
             </div>
           </div>
         </div>
@@ -63,3 +66,4 @@ const About = () => {
 };
 
 export default About;
+
