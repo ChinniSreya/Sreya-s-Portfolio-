@@ -1,4 +1,5 @@
 
+
 const About = () => {
   return (
     <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -16,16 +17,13 @@ const About = () => {
               I'm an enthusiastic Frontend Developer
             </h3>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              I'm a passionate and dedicated Frontend Developer with a strong foundation in modern web technologies. 
-              I specialize in creating responsive, user-friendly interfaces using React, TypeScript, and cutting-edge CSS frameworks.
+              As a passionate front-end developer, I specialize in crafting responsive, user-friendly websites and web applications using HTML, CSS, JavaScript, and modern frameworks like React. I enjoy transforming creative ideas into visually appealing digital experiences with clean, maintainable code.
             </p>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              My expertise extends to building AI-powered applications, browser extensions, and innovative web solutions. 
-              I'm constantly exploring new technologies and methodologies to deliver exceptional user experiences and scalable applications.
+              My focus is on delivering seamless user interactions, optimizing performance, and ensuring cross-browser compatibility. I continuously explore the latest trends in UI/UX design to bring innovation to every project I work on.
             </p>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              I believe in writing clean, maintainable code and staying updated with the latest industry trends. 
-              My goal is to bridge the gap between design and functionality, creating digital solutions that are both beautiful and performant.
+              With a strong eye for design and detail, I strive to bridge the gap between aesthetics and functionality, creating engaging interfaces that enhance user satisfaction and support overall business goals.
             </p>
           </div>
           
@@ -48,3 +46,4 @@ const About = () => {
 };
 
 export default About;
+
