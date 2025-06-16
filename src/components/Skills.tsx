@@ -1,4 +1,3 @@
-
 const Skills = () => {
   const skillCategories = [
     {
@@ -47,7 +46,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-white">
+    <section id="skills" className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Skills Section */}
         <div className="text-center mb-16">
