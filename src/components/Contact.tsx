@@ -1,4 +1,3 @@
-
 import { Mail, Phone, MapPin, Send, MessageSquare, Calendar } from "lucide-react";
 import { useState } from "react";
 
@@ -25,20 +24,17 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "sreyasri25@gmail.com",
-      description: "Send me an email anytime!"
+      value: "sreyasri25@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 9700357668",
-      description: "Call me for urgent matters"
+      value: "+91 9700357668"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Tirupati, Andhra Pradesh",
-      description: "Available for local meetups"
+      value: "Tirupati, Andhra Pradesh"
     }
   ];
 
@@ -76,7 +72,6 @@ const Contact = () => {
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-900 mb-1">{method.title}</h4>
                       <p className="text-blue-600 font-medium">{method.value}</p>
-                      <p className="text-sm text-gray-500">{method.description}</p>
                     </div>
                   </div>
                 ))}
