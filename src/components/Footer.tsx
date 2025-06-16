@@ -6,6 +6,12 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const socialLinks = [
+    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:sreyasri25@gmail.com", label: "Email" }
+  ];
+
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-blue-900 text-white py-12 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
@@ -14,9 +20,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">CS</span>
-              </div>
+              <span className="text-3xl">👩‍💻</span>
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Chinni Sreya Sri
               </h3>
@@ -45,12 +49,20 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Contact Info */}
+          {/* Social Links */}
           <div className="text-center md:text-right">
-            <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
-            <div className="space-y-2 mb-4">
-              <p className="text-gray-300">sreyasri25@gmail.com</p>
-              <p className="text-gray-300">+91 9700357668</p>
+            <h4 className="text-lg font-semibold mb-4">Connect With Me</h4>
+            <div className="flex justify-center md:justify-end space-x-4 mb-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+                  title={social.label}
+                >
+                  <social.icon size={20} className="group-hover:scale-110 transition-transform" />
+                </a>
+              ))}
             </div>
             <p className="text-gray-400 text-sm">
               Let's build something amazing together!
