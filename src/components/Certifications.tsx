@@ -28,12 +28,28 @@ const Certifications = () => {
       skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design"]
     },
     {
-      title: "ServiceNow Micro Certification",
+      title: "ServiceNow Certified CSA",
       provider: "ServiceNow",
-      category: "Platform Development",
+      category: "System Administration",
       date: "2023",
       color: "from-purple-400 to-pink-500",
-      skills: ["Platform Configuration", "Workflow Automation", "ITSM"]
+      skills: ["System Administration", "User Management", "Instance Configuration"]
+    },
+    {
+      title: "ServiceNow Certified CAD",
+      provider: "ServiceNow",
+      category: "Application Development",
+      date: "2023",
+      color: "from-indigo-400 to-purple-500",
+      skills: ["Application Development", "Business Rules", "UI Policies"]
+    },
+    {
+      title: "Pearson MePro Expert Level",
+      provider: "Pearson",
+      category: "Professional Skills",
+      date: "2023",
+      color: "from-emerald-400 to-cyan-500",
+      skills: ["Communication", "Critical Thinking", "Problem Solving", "Leadership"]
     }
   ];
 

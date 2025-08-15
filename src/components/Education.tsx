@@ -5,7 +5,7 @@ const Education = () => {
       level: "Bachelor of Technology",
       institution: "Mohan Babu University",
       stream: "Computer Science Engineering",
-      score: "CGPA: 9.27",
+      score: "CGPA: 9.29",
       year: "2022-2026",
       status: "Pursuing"
     },
