@@ -12,7 +12,7 @@ const Projects = () => {
       description: "An intelligent text summarization tool powered by advanced AI algorithms that can condense long articles, documents, and content into concise, meaningful summaries while preserving key information.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop",
       tech: ["React", "TypeScript", "AI API", "Tailwind CSS"],
-      githubUrl: "https://github.com/ChinniSreya/ai-text-summarizer",
+      githubUrl: "https://github.com/ChinniSreya/AI-Text-Summariser",
       featured: true
     },
     {
@@ -21,7 +21,7 @@ const Projects = () => {
       description: "A comprehensive interview preparation platform that uses AI to conduct mock interviews, provide real-time feedback, and help candidates improve their interview performance with personalized insights.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop",
       tech: ["React", "AI Integration", "WebRTC", "Node.js"],
-      githubUrl: "https://github.com/ChinniSreya/ai-interview-assistant",
+      githubUrl: "https://github.com/ChinniSreya/AI-Powered-Interview-Assistant-",
       featured: true
     },
     {
