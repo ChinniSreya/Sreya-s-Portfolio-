@@ -4,30 +4,6 @@ import { Award, CheckCircle, Calendar, Building } from "lucide-react";
 const Certifications = () => {
   const certifications = [
     {
-      title: "Java Fundamentals",
-      provider: "Coursera",
-      category: "Programming",
-      date: "2023",
-      color: "from-orange-400 to-red-500",
-      skills: ["Object-Oriented Programming", "Data Structures", "Algorithms"]
-    },
-    {
-      title: "AWS Certified Developer",
-      provider: "Infosys SpringBoard",
-      category: "Cloud Computing",
-      date: "2023",
-      color: "from-blue-400 to-indigo-500",
-      skills: ["AWS Services", "Cloud Architecture", "DevOps"]
-    },
-    {
-      title: "Web Development",
-      provider: "Internshala Trainings",
-      category: "Frontend Development",
-      date: "2022",
-      color: "from-green-400 to-teal-500",
-      skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design"]
-    },
-    {
       title: "ServiceNow Certified CSA",
       provider: "ServiceNow",
       category: "System Administration",
@@ -50,6 +26,14 @@ const Certifications = () => {
       date: "2023",
       color: "from-emerald-400 to-cyan-500",
       skills: ["Communication", "Critical Thinking", "Problem Solving", "Leadership"]
+    },
+    {
+      title: "Salesforce Intern",
+      provider: "Smart Bridge",
+      category: "Internship",
+      date: "2023",
+      color: "from-blue-400 to-teal-500",
+      skills: ["Salesforce Administration", "CRM Management", "Apex Development", "Lightning Components"]
     }
   ];
 
