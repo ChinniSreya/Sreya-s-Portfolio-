@@ -1,10 +1,9 @@
 
 import { useState } from "react";
-import { ExternalLink, Github, Star, X } from "lucide-react";
+import { Github, Star } from "lucide-react";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  const [selectedDemo, setSelectedDemo] = useState<string | null>(null);
 
   const projects = [
     {
@@ -13,7 +12,6 @@ const Projects = () => {
       description: "An intelligent text summarization tool powered by advanced AI algorithms that can condense long articles, documents, and content into concise, meaningful summaries while preserving key information.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop",
       tech: ["React", "TypeScript", "AI API", "Tailwind CSS"],
-      liveUrl: "https://ai-text-summarizer-demo.vercel.app",
       githubUrl: "https://github.com/ChinniSreya/ai-text-summarizer",
       featured: true
     },
@@ -23,7 +21,6 @@ const Projects = () => {
       description: "A comprehensive interview preparation platform that uses AI to conduct mock interviews, provide real-time feedback, and help candidates improve their interview performance with personalized insights.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop",
       tech: ["React", "AI Integration", "WebRTC", "Node.js"],
-      liveUrl: "https://ai-interview-assistant-demo.vercel.app",
       githubUrl: "https://github.com/ChinniSreya/ai-interview-assistant",
       featured: true
     },
@@ -33,19 +30,11 @@ const Projects = () => {
       description: "A comprehensive online platform connecting property owners with potential tenants, featuring advanced search filters, virtual tours, secure payment processing, and integrated communication tools for seamless rental transactions.",
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop",
       tech: ["React", "Node.js", "MongoDB", "Stripe API"],
-      liveUrl: "https://rental-marketplace-demo.vercel.app",
       githubUrl: "https://github.com/ChinniSreya/rental-marketplace",
       featured: false
     }
   ];
 
-  const openLiveDemo = (url: string) => {
-    setSelectedDemo(url);
-  };
-
-  const closeLiveDemo = () => {
-    setSelectedDemo(null);
-  };
 
   return (
     <section id="projects" className="py-20 px-6 bg-gray-50">
@@ -83,13 +72,6 @@ const Projects = () => {
                   hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
                 }`}>
                   <div className="flex space-x-4">
-                    <button
-                      onClick={() => openLiveDemo(project.liveUrl)}
-                      className="bg-white text-blue-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
-                      title="View Live Demo"
-                    >
-                      <ExternalLink size={20} />
-                    </button>
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -120,31 +102,6 @@ const Projects = () => {
             </div>
           ))}
         </div>
-
-        {/* Live Demo Modal */}
-        {selectedDemo && (
-          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl w-full max-w-6xl h-full max-h-[90vh] flex flex-col">
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                <h3 className="text-xl font-bold text-gray-900">Live Demo</h3>
-                <button
-                  onClick={closeLiveDemo}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-300"
-                >
-                  <X size={24} />
-                </button>
-              </div>
-              <div className="flex-1 p-6">
-                <iframe
-                  src={selectedDemo}
-                  className="w-full h-full rounded-lg border border-gray-200"
-                  title="Live Demo"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                />
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
