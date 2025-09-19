@@ -7,7 +7,6 @@ const Certifications = () => {
       title: "ServiceNow Certified CSA",
       provider: "ServiceNow",
       category: "System Administration",
-      date: "2023",
       color: "from-purple-400 to-pink-500",
       skills: ["System Administration", "User Management", "Instance Configuration"]
     },
@@ -15,7 +14,6 @@ const Certifications = () => {
       title: "ServiceNow Certified CAD",
       provider: "ServiceNow",
       category: "Application Development",
-      date: "2023",
       color: "from-indigo-400 to-purple-500",
       skills: ["Application Development", "Business Rules", "UI Policies"]
     },
@@ -23,7 +21,6 @@ const Certifications = () => {
       title: "Pearson MePro Expert Level",
       provider: "Pearson",
       category: "Professional Skills",
-      date: "2023",
       color: "from-emerald-400 to-cyan-500",
       skills: ["Communication", "Critical Thinking", "Problem Solving", "Leadership"]
     },
@@ -31,7 +28,6 @@ const Certifications = () => {
       title: "Salesforce Intern",
       provider: "Smart Bridge",
       category: "Internship",
-      date: "2023",
       color: "from-blue-400 to-teal-500",
       skills: ["Salesforce Administration", "CRM Management", "Apex Development", "Lightning Components"]
     }
@@ -78,10 +74,6 @@ const Certifications = () => {
                           <div className="flex items-center gap-1">
                             <Building size={14} />
                             <span>{cert.provider}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar size={14} />
-                            <span>{cert.date}</span>
                           </div>
                         </div>
                       </div>
