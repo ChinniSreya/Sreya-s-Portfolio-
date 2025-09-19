@@ -30,7 +30,7 @@ const Projects = () => {
       description: "A comprehensive online platform connecting property owners with potential tenants, featuring advanced search filters, virtual tours, secure payment processing, and integrated communication tools for seamless rental transactions.",
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop",
       tech: ["React", "Node.js", "MongoDB", "Stripe API"],
-      githubUrl: "https://github.com/ChinniSreya/rental-marketplace",
+      githubUrl: "https://github.com/ChinniSreya/Rental-Market-Place",
       featured: false
     }
   ];
