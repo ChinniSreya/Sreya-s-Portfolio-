@@ -62,14 +62,24 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-20 px-6 bg-gray-50 overflow-hidden relative">
+      {/* Professional Background Design */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-20 w-48 h-48 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Featured <span className="text-blue-600">Projects</span>
+              Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
             </h2>
           </div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Showcasing innovative solutions and creative implementations
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -78,7 +88,7 @@ const Projects = () => {
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
               data-project-index={index}
-              className={`bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 border border-gray-100 relative ${
+              className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 border border-gray-100/50 relative ${
                 visibleProjects.includes(index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
