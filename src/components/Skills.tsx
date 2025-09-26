@@ -1,5 +1,29 @@
 
+import { useState, useEffect, useRef } from "react";
+
 const Skills = () => {
+  const [visibleElements, setVisibleElements] = useState<number[]>([]);
+  const elementRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-element-index') || '0');
+            setVisibleElements(prev => [...new Set([...prev, index])]);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    elementRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
   const skillCategories = [
     {
       title: "Frontend Technologies",
@@ -64,9 +88,9 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Skills & Expertise
           </h2>
@@ -78,7 +102,20 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div 
+              key={index} 
+              ref={(el) => (elementRefs.current[index] = el)}
+              data-element-index={index}
+              className={`bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-700 hover:-translate-y-2 ${
+                visibleElements.includes(index) 
+                  ? 'animate-fade-in translate-y-0 opacity-100' 
+                  : 'translate-y-8 opacity-0'
+              }`}
+              style={{ 
+                animationDelay: `${index * 150}ms`,
+                transitionDelay: `${index * 75}ms`
+              }}
+            >
               <h3 className="text-xl font-bold text-gray-900 mb-8 text-center">{category.title}</h3>
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
@@ -91,7 +128,7 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
             Achievements
           </h3>
@@ -100,7 +137,20 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div 
+              key={index} 
+              ref={(el) => (elementRefs.current[skillCategories.length + index] = el)}
+              data-element-index={skillCategories.length + index}
+              className={`bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-700 hover:-translate-y-2 ${
+                visibleElements.includes(skillCategories.length + index) 
+                  ? 'animate-fade-in translate-y-0 opacity-100' 
+                  : 'translate-y-8 opacity-0'
+              }`}
+              style={{ 
+                animationDelay: `${index * 150}ms`,
+                transitionDelay: `${index * 75}ms`
+              }}
+            >
               <div className={`bg-gradient-to-r ${achievement.color} text-white px-6 py-3 rounded-full text-sm font-bold mb-6 inline-block`}>
                 {achievement.position}
               </div>

@@ -1,16 +1,41 @@
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Github, Star } from "lucide-react";
+import aiSummarizerCover from "@/assets/ai-text-summarizer-cover.jpg";
+import aiInterviewCover from "@/assets/ai-interview-assistant-cover.jpg";
+import rentalMarketplaceCover from "@/assets/rental-marketplace-cover.jpg";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [visibleProjects, setVisibleProjects] = useState<number[]>([]);
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-project-index') || '0');
+            setVisibleProjects(prev => [...new Set([...prev, index])]);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    projectRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const projects = [
     {
       id: 1,
       title: "AI Text Summarizer",
       description: "An intelligent text summarization tool powered by advanced AI algorithms that can condense long articles, documents, and content into concise, meaningful summaries while preserving key information.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop",
+      image: aiSummarizerCover,
       tech: ["React", "TypeScript", "AI API", "Tailwind CSS"],
       githubUrl: "https://github.com/ChinniSreya/AI-Text-Summariser",
       featured: true
@@ -19,7 +44,7 @@ const Projects = () => {
       id: 2,
       title: "AI Powered Interview Assistant",
       description: "A comprehensive interview preparation platform that uses AI to conduct mock interviews, provide real-time feedback, and help candidates improve their interview performance with personalized insights.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop",
+      image: aiInterviewCover,
       tech: ["React", "AI Integration", "WebRTC", "Node.js"],
       githubUrl: "https://github.com/ChinniSreya/AI-Powered-Interview-Assistant-",
       featured: true
@@ -28,7 +53,7 @@ const Projects = () => {
       id: 3,
       title: "Rental Market Place",
       description: "A comprehensive online platform connecting property owners with potential tenants, featuring advanced search filters, virtual tours, secure payment processing, and integrated communication tools for seamless rental transactions.",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop",
+      image: rentalMarketplaceCover,
       tech: ["React", "Node.js", "MongoDB", "Stripe API"],
       githubUrl: "https://github.com/ChinniSreya/Rental-Market-Place",
       featured: false
@@ -37,9 +62,9 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50">
+    <section id="projects" className="py-20 px-6 bg-gray-50 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Featured <span className="text-blue-600">Projects</span>
@@ -48,10 +73,20 @@ const Projects = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.id}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative"
+              ref={(el) => (projectRefs.current[index] = el)}
+              data-project-index={index}
+              className={`bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 border border-gray-100 relative ${
+                visibleProjects.includes(index) 
+                  ? 'animate-fade-in translate-y-0 opacity-100' 
+                  : 'translate-y-8 opacity-0'
+              }`}
+              style={{ 
+                animationDelay: `${index * 200}ms`,
+                transitionDelay: `${index * 100}ms`
+              }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
@@ -62,11 +97,11 @@ const Projects = () => {
                 </div>
               )}
               
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden group">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-br from-blue-600/90 to-indigo-600/90 flex items-center justify-center transition-opacity duration-300 ${
                   hoveredProject === project.id ? 'opacity-100' : 'opacity-0'

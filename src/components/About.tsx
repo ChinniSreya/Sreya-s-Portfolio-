@@ -1,10 +1,32 @@
 
+import { useState, useEffect, useRef } from "react";
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const aboutRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
+    <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto" ref={aboutRef}>
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
+          isVisible ? 'animate-fade-in opacity-100' : 'opacity-0 translate-y-8'
+        }`}>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             About Me
           </h2>
@@ -12,7 +34,9 @@ const About = () => {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="order-2 lg:order-1 space-y-4 sm:space-y-6">
+          <div className={`order-2 lg:order-1 space-y-4 sm:space-y-6 transition-all duration-700 delay-200 ${
+            isVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-12'
+          }`}>
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">
               I'm an enthusiastic Frontend Developer
             </h3>
@@ -27,7 +51,9 @@ const About = () => {
             </p>
           </div>
           
-          <div className="order-1 lg:order-2 relative flex justify-center">
+          <div className={`order-1 lg:order-2 relative flex justify-center transition-all duration-700 delay-400 ${
+            isVisible ? 'animate-scale-in opacity-100' : 'opacity-0 scale-95'
+          }`}>
             <div className="relative">
               <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 sm:ring-8 ring-blue-100 hover:ring-blue-200 transition-all duration-300 transform hover:scale-105">
                 <img 
