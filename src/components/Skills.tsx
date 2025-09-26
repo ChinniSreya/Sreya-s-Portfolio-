@@ -48,6 +48,18 @@ const Skills = () => {
       position: "4th Place", 
       description: "Achieved 4th place in prestigious coding competition",
       color: "from-purple-400 to-pink-500"
+    },
+    {
+      title: "Java Kingdom Workshop",
+      position: "Mentor",
+      description: "Successfully mentored 700+ students in Java programming",
+      color: "from-green-400 to-emerald-500"
+    },
+    {
+      title: "36-Hour Hackathon",
+      position: "Organizer",
+      description: "Successfully organized and managed a 36-hour hackathon event",
+      color: "from-red-400 to-rose-500"
     }
   ];
 
