@@ -51,8 +51,16 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Rental Market Place",
-      description: "A comprehensive online platform connecting property owners with potential tenants, featuring advanced search filters, virtual tours, secure payment processing, and integrated communication tools for seamless rental transactions.",
+      title: "Rental Marketplace",
+      description: "Build a platform connecting owners and renters seamlessly",
+      objective: "Build a platform connecting owners and renters seamlessly",
+      features: [
+        "Smart search & filter for rental items",
+        "Secure transactions & wallet integration", 
+        "Real-time availability tracking",
+        "Analytics dashboard for owners"
+      ],
+      impact: "Increased accessibility, convenience, and cost savings",
       image: rentalMarketplaceCover,
       tech: ["React", "Node.js", "MongoDB", "Stripe API"],
       githubUrl: "https://github.com/ChinniSreya/Rental-Market-Place",
@@ -62,22 +70,24 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50 overflow-hidden relative">
-      {/* Professional Background Design */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-20 w-48 h-48 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-full blur-3xl"></div>
+    <section id="projects" className="py-20 px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden relative">
+      {/* Professional Tech Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/2 right-10 w-80 h-80 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-10 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        {/* Tech Grid Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '20px 20px' }}></div>
       </div>
       
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Featured <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
             </h2>
           </div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Showcasing innovative solutions and creative implementations
           </p>
         </div>
@@ -88,7 +98,7 @@ const Projects = () => {
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
               data-project-index={index}
-              className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 border border-gray-100/50 relative ${
+              className={`bg-white/10 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:bg-white/15 transition-all duration-700 transform hover:-translate-y-2 border border-white/20 relative ${
                 visibleProjects.includes(index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
@@ -131,13 +141,47 @@ const Projects = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
+                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                
+                {project.id === 3 ? (
+                  // Professional Rental Marketplace Layout
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-cyan-400 font-semibold mb-2">Objective</h4>
+                      <p className="text-gray-300 text-sm">{project.objective}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-cyan-400 font-semibold mb-2">Features</h4>
+                      <ul className="space-y-1">
+                        {project.features?.map((feature, idx) => (
+                          <li 
+                            key={idx} 
+                            className="text-gray-300 text-sm flex items-start gap-2 animate-fade-in"
+                            style={{ animationDelay: `${(idx + 1) * 200}ms` }}
+                          >
+                            <span className="text-cyan-400 mt-1">•</span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-cyan-400 font-semibold mb-2">Impact</h4>
+                      <p className="text-gray-300 text-sm">{project.impact}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
+                )}
+                
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {project.tech.map((tech, idx) => (
                     <span
                       key={tech}
-                      className="bg-gradient-to-r from-blue-100 to-slate-100 text-blue-800 text-sm px-3 py-1 rounded-full border border-blue-200"
+                      className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 text-sm px-3 py-1 rounded-full border border-cyan-400/30 animate-fade-in"
+                      style={{ animationDelay: `${(idx + 1) * 100}ms` }}
                     >
                       {tech}
                     </span>
