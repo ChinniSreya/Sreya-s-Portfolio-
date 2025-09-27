@@ -1,7 +1,30 @@
 
 import { Award, CheckCircle, Calendar, Building } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const Certifications = () => {
+  const [visibleCerts, setVisibleCerts] = useState<number[]>([]);
+  const certRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-cert-index') || '0');
+            setVisibleCerts(prev => [...new Set([...prev, index])]);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    certRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
   const certifications = [
     {
       title: "ServiceNow Certified CSA",
@@ -34,17 +57,23 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
+      {/* Professional Background Design */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-emerald-400/30 to-blue-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-10 w-56 h-56 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-cyan-400/30 to-indigo-400/30 rounded-full blur-3xl"></div>
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <div className="flex items-center justify-center mb-4">
             <div className="bg-blue-600 p-3 rounded-full">
               <Award className="text-white" size={28} />
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Professional Certifications
+            Professional <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">Certifications</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Validated expertise through industry-recognized certifications and continuous professional development
@@ -56,7 +85,17 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 overflow-hidden group"
+              ref={(el) => (certRefs.current[index] = el)}
+              data-cert-index={index}
+              className={`bg-white/80 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-md transition-all duration-700 transform hover:-translate-y-2 border border-gray-200/50 overflow-hidden group ${
+                visibleCerts.includes(index) 
+                  ? 'animate-fade-in translate-y-0 opacity-100' 
+                  : 'translate-y-8 opacity-0'
+              }`}
+              style={{ 
+                animationDelay: `${index * 200}ms`,
+                transitionDelay: `${index * 100}ms`
+              }}
             >
               {/* Card Header */}
               <div className="p-6 border-b border-gray-100">

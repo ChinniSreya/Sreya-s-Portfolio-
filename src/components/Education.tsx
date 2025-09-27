@@ -28,11 +28,17 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-16 px-6 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+    <section id="education" className="py-16 px-6 bg-gray-50 relative overflow-hidden">
+      {/* Professional Background Design */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-16 right-16 w-44 h-44 bg-gradient-to-r from-green-400/30 to-blue-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-16 left-16 w-52 h-52 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/3 w-36 h-36 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-3xl"></div>
+      </div>
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Education
+            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Education</span>
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
             My academic background and qualifications
@@ -43,7 +49,7 @@ const Education = () => {
           {educationData.map((edu, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-sm p-6 border border-gray-200"
+              className="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm p-6 border border-gray-200/50 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div className="flex-1 mb-4 md:mb-0">

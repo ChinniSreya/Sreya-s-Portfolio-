@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Send, MessageSquare, Calendar, CheckCircle } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -10,7 +10,28 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const { toast } = useToast();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -79,12 +100,24 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-blue-50 to-slate-100">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+    <section 
+      ref={sectionRef}
+      id="contact" 
+      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-blue-50 to-slate-100 relative overflow-hidden"
+    >
+      {/* Professional Background Design */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-10 right-10 w-48 h-48 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-cyan-400/20 to-teal-400/20 rounded-full blur-3xl"></div>
+      </div>
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-700 ${
+          isVisible ? 'animate-fade-in translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
           <div className="flex items-center justify-center gap-3 mb-4 sm:mb-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-              Let's <span className="text-blue-600">Connect</span>
+              Let's <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Connect</span>
             </h2>
           </div>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
@@ -93,8 +126,10 @@ const Contact = () => {
         </div>
 
         <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="space-y-6 sm:space-y-8">
-            <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100">
+          <div className={`space-y-6 sm:space-y-8 transition-all duration-700 ${
+            isVisible ? 'animate-fade-in translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+          }`} style={{ animationDelay: '200ms' }}>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100/50">
               <div className="flex items-center gap-3 mb-4 sm:mb-6">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Get in touch</h3>
               </div>
@@ -124,7 +159,9 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 border border-gray-100">
+          <div className={`bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 border border-gray-100/50 transition-all duration-700 ${
+            isVisible ? 'animate-fade-in translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+          }`} style={{ animationDelay: '400ms' }}>
             {!isSubmitted ? (
               <>
                 <div className="flex items-center gap-2 mb-4 sm:mb-6">
