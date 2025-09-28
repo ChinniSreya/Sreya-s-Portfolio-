@@ -29,12 +29,6 @@ const Education = () => {
 
   return (
     <section id="education" className="py-16 px-6 bg-gray-50 relative overflow-hidden">
-      {/* Professional Background Design */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-16 right-16 w-44 h-44 bg-gradient-to-r from-green-400/30 to-blue-400/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-16 left-16 w-52 h-52 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/3 w-36 h-36 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-3xl"></div>
-      </div>
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
