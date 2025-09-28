@@ -113,7 +113,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                  className="w-full h-56 object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-br from-blue-600/90 to-indigo-600/90 flex items-center justify-center transition-opacity duration-300 ${
                   hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
@@ -132,7 +132,7 @@ const Projects = () => {
                 </div>
               </div>
               
-              <div className="p-6">
+              <div className="p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
                 
                 {project.id === 3 ? (
