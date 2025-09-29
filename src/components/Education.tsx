@@ -28,15 +28,14 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 px-6 bg-gradient-section relative overflow-hidden">
+    <section id="education" className="py-16 px-6 bg-gray-50 relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl font-light text-primary-custom mb-6">
-            Education
+        <div className="text-center mb-12 animate-fade-in">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Education</span>
           </h2>
-          <div className="w-16 h-px bg-elegant-blue mx-auto mb-6"></div>
-          <p className="text-secondary-custom max-w-xl mx-auto font-light">
-            My academic foundation and qualifications
+          <p className="text-gray-600 max-w-xl mx-auto">
+            My academic background and qualifications
           </p>
         </div>
 
@@ -44,36 +43,36 @@ const Education = () => {
           {educationData.map((edu, index) => (
             <div
               key={index}
-              className="bg-gradient-card rounded-2xl shadow-soft p-8 border border-border/50 hover-lift transition-all duration-300 animate-fade-in"
+              className="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm p-6 border border-gray-200/50 hover:shadow-md transition-all duration-300 hover:-translate-y-1 animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div className="flex-1 mb-6 md:mb-0">
-                  <div className="flex items-center gap-3 mb-3 animate-fade-in" style={{ animationDelay: `${index * 200 + 100}ms` }}>
-                    <h3 className="text-xl font-medium text-primary-custom">
+                <div className="flex-1 mb-4 md:mb-0">
+                  <div className="flex items-center gap-3 mb-2 animate-fade-in" style={{ animationDelay: `${index * 200 + 100}ms` }}>
+                    <h3 className="text-xl font-semibold text-gray-900">
                       {edu.level}
                     </h3>
-                    <span className={`text-xs px-3 py-1 rounded-full animate-fade-in ${
+                    <span className={`text-xs px-2 py-1 rounded-full animate-fade-in ${
                       edu.status === 'Pursuing' 
-                        ? 'bg-elegant-blue/10 text-elegant-blue' 
-                        : 'bg-accent text-accent-foreground'
+                        ? 'bg-blue-100 text-blue-700' 
+                        : 'bg-slate-100 text-slate-700'
                     }`} style={{ animationDelay: `${index * 200 + 200}ms` }}>
                       {edu.status}
                     </span>
                   </div>
-                  <h4 className="text-lg font-medium text-elegant-blue mb-2 animate-fade-in" style={{ animationDelay: `${index * 200 + 300}ms` }}>
+                  <h4 className="text-lg font-medium text-blue-600 mb-1 animate-fade-in" style={{ animationDelay: `${index * 200 + 300}ms` }}>
                     {edu.institution}
                   </h4>
-                  <p className="text-secondary-custom mb-2 animate-fade-in" style={{ animationDelay: `${index * 200 + 400}ms` }}>
+                  <p className="text-gray-600 mb-1 animate-fade-in" style={{ animationDelay: `${index * 200 + 400}ms` }}>
                     {edu.stream}
                   </p>
-                  <p className="text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: `${index * 200 + 500}ms` }}>
+                  <p className="text-sm text-gray-500 animate-fade-in" style={{ animationDelay: `${index * 200 + 500}ms` }}>
                     {edu.year}
                   </p>
                 </div>
                 <div className="text-right animate-fade-in" style={{ animationDelay: `${index * 200 + 600}ms` }}>
-                  <div className="bg-accent px-4 py-3 rounded-xl border border-border/30">
-                    <span className="text-primary-custom font-medium">{edu.score}</span>
+                  <div className="bg-blue-50 px-4 py-2 rounded-lg">
+                    <span className="text-blue-700 font-semibold">{edu.score}</span>
                   </div>
                 </div>
               </div>

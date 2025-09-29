@@ -70,14 +70,16 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gradient-elegant overflow-hidden relative">
+    <section id="projects" className="py-20 px-6 bg-gray-50 overflow-hidden relative">
+      
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-light text-primary-custom mb-6">
-            Featured <span className="text-elegant-blue font-medium">Projects</span>
-          </h2>
-          <div className="w-16 h-px bg-elegant-blue mx-auto mb-6"></div>
-          <p className="text-lg text-secondary-custom max-w-2xl mx-auto font-light">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+            </h2>
+          </div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Showcasing innovative solutions and creative implementations
           </p>
         </div>
@@ -88,7 +90,7 @@ const Projects = () => {
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
               data-project-index={index}
-              className={`bg-gradient-card rounded-2xl shadow-soft overflow-hidden hover:shadow-elegant transition-all duration-700 hover-lift border border-border/50 relative ${
+              className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 border border-gray-100/50 relative ${
                 visibleProjects.includes(index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
@@ -101,7 +103,7 @@ const Projects = () => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               {project.featured && (
-                <div className="absolute top-4 left-4 z-20 bg-elegant-blue text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
                   <Star size={14} />
                   Featured
                 </div>
@@ -111,9 +113,9 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-56 object-cover transition-all duration-500 group-hover:scale-110"
+                  className="w-full h-56 object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br from-elegant-blue/80 to-primary/80 flex items-center justify-center transition-opacity duration-300 ${
+                <div className={`absolute inset-0 bg-gradient-to-br from-blue-600/90 to-indigo-600/90 flex items-center justify-center transition-opacity duration-300 ${
                   hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
                 }`}>
                   <div className="flex space-x-4">
@@ -121,7 +123,7 @@ const Projects = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white text-primary p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-elegant"
+                      className="bg-white text-blue-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       title="View Source Code"
                     >
                       <Github size={20} />
@@ -131,26 +133,26 @@ const Projects = () => {
               </div>
               
               <div className="p-8">
-                <h3 className="text-xl font-medium text-primary-custom mb-4">{project.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
                 
                 {project.id === 3 ? (
                   // Professional Rental Marketplace Layout
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-elegant-blue font-medium mb-2">Objective</h4>
-                      <p className="text-secondary-custom text-sm font-light">{project.objective}</p>
+                      <h4 className="text-blue-600 font-semibold mb-2">Objective</h4>
+                      <p className="text-gray-600 text-sm">{project.objective}</p>
                     </div>
                     
                     <div>
-                      <h4 className="text-elegant-blue font-medium mb-2">Features</h4>
+                      <h4 className="text-blue-600 font-semibold mb-2">Features</h4>
                       <ul className="space-y-1">
                         {project.features?.map((feature, idx) => (
                           <li 
                             key={idx} 
-                            className="text-secondary-custom text-sm flex items-start gap-2 animate-fade-in font-light"
+                            className="text-gray-600 text-sm flex items-start gap-2 animate-fade-in"
                             style={{ animationDelay: `${(idx + 1) * 200}ms` }}
                           >
-                            <span className="text-elegant-blue mt-1">•</span>
+                            <span className="text-blue-600 mt-1">•</span>
                             {feature}
                           </li>
                         ))}
@@ -158,19 +160,19 @@ const Projects = () => {
                     </div>
                     
                     <div>
-                      <h4 className="text-elegant-blue font-medium mb-2">Impact</h4>
-                      <p className="text-secondary-custom text-sm font-light">{project.impact}</p>
+                      <h4 className="text-blue-600 font-semibold mb-2">Impact</h4>
+                      <p className="text-gray-600 text-sm">{project.impact}</p>
                     </div>
                   </div>
                 ) : (
-                  <p className="text-secondary-custom mb-4 line-clamp-3 font-light">{project.description}</p>
+                  <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
                 )}
                 
-                <div className="flex flex-wrap gap-2 mt-6">
+                <div className="flex flex-wrap gap-2 mt-4">
                   {project.tech.map((tech, idx) => (
                     <span
                       key={tech}
-                      className="bg-accent/50 text-primary-custom text-sm px-3 py-1 rounded-full border border-border/30 animate-fade-in font-medium"
+                      className="bg-gradient-to-r from-blue-100 to-slate-100 text-blue-800 text-sm px-3 py-1 rounded-full border border-blue-200 animate-fade-in"
                       style={{ animationDelay: `${(idx + 1) * 100}ms` }}
                     >
                       {tech}

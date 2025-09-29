@@ -88,25 +88,25 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-elegant overflow-hidden">
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl font-light text-primary-custom mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Skills & Expertise
           </h2>
-          <div className="w-16 h-px bg-elegant-blue mx-auto mb-6"></div>
-          <p className="text-lg text-secondary-custom max-w-2xl mx-auto font-light">
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Technologies and tools I use to bring ideas to life
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
               ref={(el) => (elementRefs.current[index] = el)}
               data-element-index={index}
-              className={`bg-gradient-card rounded-2xl p-8 shadow-soft hover:shadow-elegant transition-all duration-700 hover-lift border border-border/50 ${
+              className={`bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-700 hover:-translate-y-2 ${
                 visibleElements.includes(index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
@@ -116,11 +116,11 @@ const Skills = () => {
                 transitionDelay: `${index * 75}ms`
               }}
             >
-              <h3 className="text-xl font-medium text-primary-custom mb-8 text-center">{category.title}</h3>
-              <div className="space-y-3">
+              <h3 className="text-xl font-bold text-gray-900 mb-8 text-center">{category.title}</h3>
+              <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="bg-accent/30 rounded-xl px-4 py-3 text-center border border-border/30">
-                    <span className="text-primary-custom font-medium">{skill.name}</span>
+                  <div key={skillIndex} className="bg-gray-50 rounded-lg px-4 py-3 text-center">
+                    <span className="text-gray-700 font-medium">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -129,19 +129,19 @@ const Skills = () => {
         </div>
 
         <div className="text-center mb-12 animate-fade-in">
-          <h3 className="text-2xl sm:text-3xl font-light text-primary-custom mb-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
             Achievements
           </h3>
-          <div className="w-16 h-px bg-elegant-blue mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
             <div 
               key={index} 
               ref={(el) => (elementRefs.current[skillCategories.length + index] = el)}
               data-element-index={skillCategories.length + index}
-              className={`bg-gradient-card rounded-2xl p-8 text-center shadow-soft hover:shadow-elegant transition-all duration-700 hover-lift border border-border/50 ${
+              className={`bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-700 hover:-translate-y-2 ${
                 visibleElements.includes(skillCategories.length + index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
@@ -151,11 +151,11 @@ const Skills = () => {
                 transitionDelay: `${index * 75}ms`
               }}
             >
-              <div className={`bg-gradient-to-r ${achievement.color} text-white px-6 py-2 rounded-full text-sm font-medium mb-6 inline-block`}>
+              <div className={`bg-gradient-to-r ${achievement.color} text-white px-6 py-3 rounded-full text-sm font-bold mb-6 inline-block`}>
                 {achievement.position}
               </div>
-              <h4 className="text-lg font-medium text-primary-custom mb-4">{achievement.title}</h4>
-              <p className="text-secondary-custom leading-relaxed font-light">{achievement.description}</p>
+              <h4 className="text-lg font-bold text-gray-900 mb-4">{achievement.title}</h4>
+              <p className="text-gray-600 leading-relaxed">{achievement.description}</p>
             </div>
           ))}
         </div>
