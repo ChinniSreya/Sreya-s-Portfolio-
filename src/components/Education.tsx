@@ -28,56 +28,71 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-16 px-6 bg-gray-50 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto relative z-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Education</span>
+    <section id="education" className="py-20 sm:py-28 px-6 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            <span className="text-gradient">Education</span> Journey
           </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
-            My academic background and qualifications
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Academic foundation and continuous learning
           </p>
         </div>
 
-        <div className="space-y-6">
-          {educationData.map((edu, index) => (
-            <div
-              key={index}
-              className="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm p-6 border border-gray-200/50 hover:shadow-md transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div className="flex-1 mb-4 md:mb-0">
-                  <div className="flex items-center gap-3 mb-2 animate-fade-in" style={{ animationDelay: `${index * 200 + 100}ms` }}>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {edu.level}
-                    </h3>
-                    <span className={`text-xs px-2 py-1 rounded-full animate-fade-in ${
-                      edu.status === 'Pursuing' 
-                        ? 'bg-blue-100 text-blue-700' 
-                        : 'bg-slate-100 text-slate-700'
-                    }`} style={{ animationDelay: `${index * 200 + 200}ms` }}>
-                      {edu.status}
-                    </span>
-                  </div>
-                  <h4 className="text-lg font-medium text-blue-600 mb-1 animate-fade-in" style={{ animationDelay: `${index * 200 + 300}ms` }}>
-                    {edu.institution}
-                  </h4>
-                  <p className="text-gray-600 mb-1 animate-fade-in" style={{ animationDelay: `${index * 200 + 400}ms` }}>
-                    {edu.stream}
-                  </p>
-                  <p className="text-sm text-gray-500 animate-fade-in" style={{ animationDelay: `${index * 200 + 500}ms` }}>
-                    {edu.year}
-                  </p>
-                </div>
-                <div className="text-right animate-fade-in" style={{ animationDelay: `${index * 200 + 600}ms` }}>
-                  <div className="bg-blue-50 px-4 py-2 rounded-lg">
-                    <span className="text-blue-700 font-semibold">{edu.score}</span>
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-purple-500 rounded-full hidden md:block"></div>
+          
+          <div className="space-y-8">
+            {educationData.map((edu, index) => (
+              <div
+                key={index}
+                className="relative glass rounded-3xl p-8 hover:shadow-elegant transition-all duration-500 hover:-translate-y-1 animate-fade-in"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-6 top-10 w-5 h-5 rounded-full bg-primary border-4 border-background shadow-lg hidden md:block"></div>
+                
+                <div className="md:ml-12">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                    <div className="flex-1 space-y-3">
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <h3 className="text-2xl font-bold text-foreground">
+                          {edu.level}
+                        </h3>
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                          edu.status === 'Pursuing' 
+                            ? 'bg-primary/20 text-primary border border-primary/30' 
+                            : 'bg-muted text-muted-foreground'
+                        }`}>
+                          {edu.status}
+                        </span>
+                      </div>
+                      
+                      <h4 className="text-xl font-semibold text-primary">
+                        {edu.institution}
+                      </h4>
+                      
+                      <p className="text-muted-foreground text-base">
+                        {edu.stream}
+                      </p>
+                      
+                      <p className="text-sm text-muted-foreground font-medium">
+                        📅 {edu.year}
+                      </p>
+                    </div>
+                    
+                    <div className="lg:text-right">
+                      <div className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary/10 border border-primary/20">
+                        <span className="text-2xl font-bold text-primary">{edu.score}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -62,17 +62,21 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50 overflow-hidden relative">
+    <section id="projects" className="py-20 sm:py-28 px-6 bg-gradient-to-b from-muted/30 to-background overflow-hidden relative">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-primary/20 to-purple-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+      </div>
       
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
-            </h2>
-          </div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Showcasing innovative solutions and creative implementations
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="text-gradient">Projects</span>
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Innovative solutions crafted with modern technologies and thoughtful design
           </p>
         </div>
 
@@ -82,58 +86,57 @@ const Projects = () => {
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
               data-project-index={index}
-              className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 border border-gray-100/50 relative ${
+              className={`group glass rounded-3xl overflow-hidden hover:shadow-elegant transition-all duration-700 hover:-translate-y-2 relative ${
                 visibleProjects.includes(index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
               }`}
               style={{ 
-                animationDelay: `${index * 200}ms`,
-                transitionDelay: `${index * 100}ms`
+                animationDelay: `${index * 150}ms`,
+                transitionDelay: `${index * 75}ms`
               }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               {project.featured && (
-                <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
-                  <Star size={14} />
+                <div className="absolute top-5 left-5 z-20 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                  <Star size={12} className="fill-white" />
                   Featured
                 </div>
               )}
               
-              <div className="relative overflow-hidden group">
+              <div className="relative overflow-hidden aspect-[4/3]">
                 <img
                   src={project.image}
-                  alt={project.title}
-                  className="w-full h-56 object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                  alt={`${project.title} - Project showcase`}
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br from-blue-600/90 to-indigo-600/90 flex items-center justify-center transition-opacity duration-300 ${
-                  hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
+                <div className={`absolute inset-0 bg-gradient-to-br from-primary/95 to-primary-dark/95 flex items-center justify-center transition-all duration-500 ${
+                  hoveredProject === project.id ? 'opacity-100 backdrop-blur-sm' : 'opacity-0'
                 }`}>
-                  <div className="flex space-x-4">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white text-blue-600 p-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
-                      title="View Source Code"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-primary p-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:scale-110 group/btn"
+                    title="View Source Code"
+                    aria-label={`View ${project.title} source code on GitHub`}
+                  >
+                    <Github size={24} className="group-hover/btn:rotate-12 transition-transform" />
+                  </a>
                 </div>
               </div>
               
-              <div className="p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
+              <div className="p-7">
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-muted-foreground mb-5 line-clamp-3 leading-relaxed">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, idx) => (
                     <span
                       key={tech}
-                      className="bg-gradient-to-r from-blue-100 to-slate-100 text-blue-800 text-sm px-3 py-1 rounded-full border border-blue-200 animate-fade-in"
-                      style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+                      className="px-3 py-1.5 rounded-xl bg-primary/10 text-primary text-xs font-medium border border-primary/20 animate-fade-in hover:bg-primary/20 transition-colors"
+                      style={{ animationDelay: `${(idx + 1) * 50}ms` }}
                     >
                       {tech}
                     </span>

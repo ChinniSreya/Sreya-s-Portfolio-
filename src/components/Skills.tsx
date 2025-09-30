@@ -88,39 +88,42 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Skills & Expertise
+    <section id="skills" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/30 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            Skills & <span className="text-gradient">Expertise</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Technologies and tools that power my development workflow
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-24">
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
               ref={(el) => (elementRefs.current[index] = el)}
               data-element-index={index}
-              className={`bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-700 hover:-translate-y-2 ${
+              className={`glass rounded-3xl p-8 hover:shadow-elegant transition-all duration-700 hover:-translate-y-2 ${
                 visibleElements.includes(index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
               }`}
               style={{ 
-                animationDelay: `${index * 150}ms`,
-                transitionDelay: `${index * 75}ms`
+                animationDelay: `${index * 100}ms`,
+                transitionDelay: `${index * 50}ms`
               }}
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-8 text-center">{category.title}</h3>
-              <div className="space-y-4">
+              <div className="mb-8 text-center">
+                <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
+                <div className="w-12 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-3 rounded-full"></div>
+              </div>
+              <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="bg-gray-50 rounded-lg px-4 py-3 text-center">
-                    <span className="text-gray-700 font-medium">{skill.name}</span>
+                  <div key={skillIndex} className="group relative overflow-hidden rounded-xl bg-muted/50 hover:bg-primary/10 px-4 py-3 text-center transition-all duration-300">
+                    <span className="text-foreground font-medium group-hover:text-primary transition-colors">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -128,34 +131,37 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="text-center mb-12 animate-fade-in">
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            Achievements
+        <div className="text-center mb-16 animate-fade-in">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-4">
+            <span className="text-gradient">Achievements</span> & Recognition
           </h3>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Milestones that showcase my journey and contributions
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {achievements.map((achievement, index) => (
             <div 
               key={index} 
               ref={(el) => (elementRefs.current[skillCategories.length + index] = el)}
               data-element-index={skillCategories.length + index}
-              className={`bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-700 hover:-translate-y-2 ${
+              className={`glass rounded-3xl p-8 text-center hover:shadow-elegant transition-all duration-700 hover:-translate-y-2 ${
                 visibleElements.includes(skillCategories.length + index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
               }`}
               style={{ 
-                animationDelay: `${index * 150}ms`,
-                transitionDelay: `${index * 75}ms`
+                animationDelay: `${index * 100}ms`,
+                transitionDelay: `${index * 50}ms`
               }}
             >
-              <div className={`bg-gradient-to-r ${achievement.color} text-white px-6 py-3 rounded-full text-sm font-bold mb-6 inline-block`}>
+              <div className={`bg-gradient-to-r ${achievement.color} text-white px-5 py-2.5 rounded-2xl text-sm font-bold mb-6 inline-block shadow-lg`}>
                 {achievement.position}
               </div>
-              <h4 className="text-lg font-bold text-gray-900 mb-4">{achievement.title}</h4>
-              <p className="text-gray-600 leading-relaxed">{achievement.description}</p>
+              <h4 className="text-lg font-bold text-foreground mb-3">{achievement.title}</h4>
+              <p className="text-muted-foreground leading-relaxed">{achievement.description}</p>
             </div>
           ))}
         </div>
