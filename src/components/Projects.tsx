@@ -52,15 +52,7 @@ const Projects = () => {
     {
       id: 3,
       title: "Rental Marketplace",
-      description: "Build a platform connecting owners and renters seamlessly",
-      objective: "Build a platform connecting owners and renters seamlessly",
-      features: [
-        "Smart search & filter for rental items",
-        "Secure transactions & wallet integration", 
-        "Real-time availability tracking",
-        "Analytics dashboard for owners"
-      ],
-      impact: "Increased accessibility, convenience, and cost savings",
+      description: "A smart platform connecting owners and renters with secure transactions, real-time availability tracking, and an integrated analytics dashboard for seamless rental management.",
       image: rentalMarketplaceCover,
       tech: ["React", "Node.js", "MongoDB", "Stripe API"],
       githubUrl: "https://github.com/ChinniSreya/Rental-Market-Place",
@@ -134,39 +126,7 @@ const Projects = () => {
               
               <div className="p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                
-                {project.id === 3 ? (
-                  // Professional Rental Marketplace Layout
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-blue-600 font-semibold mb-2">Objective</h4>
-                      <p className="text-gray-600 text-sm">{project.objective}</p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-blue-600 font-semibold mb-2">Features</h4>
-                      <ul className="space-y-1">
-                        {project.features?.map((feature, idx) => (
-                          <li 
-                            key={idx} 
-                            className="text-gray-600 text-sm flex items-start gap-2 animate-fade-in"
-                            style={{ animationDelay: `${(idx + 1) * 200}ms` }}
-                          >
-                            <span className="text-blue-600 mt-1">•</span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-blue-600 font-semibold mb-2">Impact</h4>
-                      <p className="text-gray-600 text-sm">{project.impact}</p>
-                    </div>
-                  </div>
-                ) : (
-                  <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
-                )}
+                <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mt-4">
                   {project.tech.map((tech, idx) => (
