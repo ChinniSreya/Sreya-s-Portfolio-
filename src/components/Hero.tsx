@@ -4,13 +4,17 @@ import Navigation from "./Navigation";
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Modern gradient background with mesh effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-purple-50/60 to-pink-50/40"></div>
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]"></div>
       
-      {/* Animated abstract shapes */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary/15 via-purple-400/10 to-transparent rounded-full blur-3xl animate-float opacity-70"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-purple-400/15 via-pink-400/10 to-transparent rounded-full blur-3xl animate-float opacity-70" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
+      {/* Neon glow effects and abstract shapes */}
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-br from-primary/30 via-purple-500/20 to-transparent rounded-full blur-3xl animate-float opacity-40"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-purple-600/25 via-fuchsia-500/15 to-transparent rounded-full blur-3xl animate-float opacity-35" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-cyan-500/15 to-purple-500/15 rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: '2s' }}></div>
+      
+      {/* Subtle neon accent lines */}
+      <div className="absolute top-1/4 right-1/4 w-[300px] h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent blur-sm animate-pulse"></div>
+      <div className="absolute bottom-1/3 left-1/4 w-[250px] h-[2px] bg-gradient-to-r from-transparent via-purple-400/40 to-transparent blur-sm animate-pulse" style={{ animationDelay: '1.5s' }}></div>
       
       <Navigation />
       
