@@ -4,12 +4,13 @@ import Navigation from "./Navigation";
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Elegant gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-purple-50/30"></div>
+      {/* Modern gradient background with mesh effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-purple-50/60 to-pink-50/40"></div>
       
-      {/* Animated gradient orbs */}
-      <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-r from-primary/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+      {/* Animated abstract shapes */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary/15 via-purple-400/10 to-transparent rounded-full blur-3xl animate-float opacity-70"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-purple-400/15 via-pink-400/10 to-transparent rounded-full blur-3xl animate-float opacity-70" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
       
       <Navigation />
       
