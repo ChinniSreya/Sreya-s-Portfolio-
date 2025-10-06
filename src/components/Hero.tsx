@@ -63,7 +63,7 @@ const Hero = () => {
             </div>
             
             {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 pb-20 animate-fade-in" style={{ animationDelay: '0.5s' }}>
               <button 
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group px-8 py-4 rounded-2xl bg-primary hover:bg-primary-dark text-primary-foreground font-semibold shadow-elegant hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -78,11 +78,9 @@ const Hero = () => {
                 Download Resume
               </button>
             </div>
-          </div>
-          
-          {/* Scroll indicator */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="flex flex-col items-center gap-2">
+            
+            {/* Scroll indicator */}
+            <div className="mt-8 mb-10 flex flex-col items-center gap-2 animate-bounce">
               <span className="text-sm text-muted-foreground">Scroll to explore</span>
               <ArrowDown size={20} className="text-primary" />
             </div>
