@@ -167,7 +167,12 @@
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-neon hover:-translate-y-2;
+    @apply transition-all duration-300 hover:-translate-y-2;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-neon);
   }
   
   .glass {
