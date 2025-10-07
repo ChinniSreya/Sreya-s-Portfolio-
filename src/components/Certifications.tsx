@@ -57,25 +57,25 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
+    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 section-gradient relative overflow-hidden">
       {/* Professional Background Design */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-emerald-400/30 to-blue-400/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-10 w-56 h-56 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-gradient-to-r from-cyan-400/30 to-indigo-400/30 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl"></div>
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <div className="flex items-center justify-center mb-4">
-            <div className="bg-blue-600 p-3 rounded-full">
-              <Award className="text-white" size={28} />
+            <div className="bg-primary p-3 rounded-full shadow-neon">
+              <Award className="text-primary-foreground" size={28} />
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Professional <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">Certifications</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            Professional <span className="text-neon">Certifications</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Validated expertise through industry-recognized certifications and continuous professional development
           </p>
         </div>
@@ -87,7 +87,7 @@ const Certifications = () => {
               key={index}
               ref={(el) => (certRefs.current[index] = el)}
               data-cert-index={index}
-              className={`bg-white/80 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-md transition-all duration-700 transform hover:-translate-y-2 border border-gray-200/50 overflow-hidden group ${
+              className={`glass-dark rounded-xl shadow-neon card-hover transition-all duration-700 transform border border-primary/20 overflow-hidden group ${
                 visibleCerts.includes(index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
@@ -98,18 +98,18 @@ const Certifications = () => {
               }}
             >
               {/* Card Header */}
-              <div className="p-6 border-b border-gray-100">
+              <div className="p-6 border-b border-primary/10">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${cert.color} flex items-center justify-center`}>
+                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${cert.color} flex items-center justify-center shadow-neon`}>
                         <CheckCircle className="text-white" size={24} />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-xl font-semibold text-foreground group-hover:text-neon transition-colors">
                           {cert.title}
                         </h3>
-                        <div className="flex items-center gap-4 text-sm text-gray-500 mt-1">
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1">
                           <div className="flex items-center gap-1">
                             <Building size={14} />
                             <span>{cert.provider}</span>
@@ -117,7 +117,7 @@ const Certifications = () => {
                         </div>
                       </div>
                     </div>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary-foreground border border-primary/20">
                       {cert.category}
                     </span>
                   </div>
@@ -126,24 +126,24 @@ const Certifications = () => {
 
               {/* Card Content */}
               <div className="p-6">
-                <h4 className="font-medium text-gray-900 mb-3">Key Competencies</h4>
+                <h4 className="font-medium text-foreground mb-3">Key Competencies</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {cert.skills.map((skill, skillIndex) => (
                     <div key={skillIndex} className="flex items-center gap-2">
-                      <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${cert.color}`}></div>
-                      <span className="text-sm text-gray-600">{skill}</span>
+                      <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${cert.color} shadow-[0_0_8px_currentColor]`}></div>
+                      <span className="text-sm text-muted-foreground">{skill}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Card Footer */}
-              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+              <div className="px-6 py-4 bg-card/60 border-t border-primary/10">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Status</span>
+                  <span className="text-sm text-muted-foreground">Status</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-sm font-medium text-green-700">Certified</span>
+                    <div className="w-2 h-2 bg-green-500 rounded-full shadow-[0_0_8px_rgb(34,197,94)]"></div>
+                    <span className="text-sm font-medium text-green-400">Certified</span>
                   </div>
                 </div>
               </div>
@@ -153,9 +153,9 @@ const Certifications = () => {
 
         {/* Bottom Message */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-3 bg-blue-50 px-6 py-4 rounded-lg border border-blue-100">
-            <Award className="text-blue-600" size={20} />
-            <span className="text-blue-800 font-medium">
+          <div className="inline-flex items-center gap-3 glass-dark px-6 py-4 rounded-lg border border-primary/20 shadow-neon">
+            <Award className="text-primary" size={20} />
+            <span className="text-foreground font-medium">
               Continuously expanding expertise through professional development and industry certifications
             </span>
           </div>
