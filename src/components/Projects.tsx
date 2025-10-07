@@ -62,12 +62,17 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 sm:py-28 px-6 bg-gradient-to-b from-muted/30 to-background overflow-hidden relative">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-primary/20 to-purple-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+    <section id="projects" className="py-20 sm:py-28 px-6 section-gradient overflow-hidden relative">
+      {/* Animated Background decoration */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-accent/30 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl animate-float"></div>
       </div>
+      
+      {/* Decorative geometric shapes */}
+      <div className="absolute top-40 right-20 w-20 h-20 border-2 border-primary/20 rounded-lg rotate-45 animate-spin-slow"></div>
+      <div className="absolute bottom-40 left-20 w-16 h-16 border-2 border-accent/20 rounded-full animate-pulse-slow"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 sm:mb-20 animate-fade-in">
@@ -86,7 +91,7 @@ const Projects = () => {
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
               data-project-index={index}
-              className={`group glass rounded-3xl overflow-hidden hover:shadow-elegant transition-all duration-700 hover:-translate-y-2 relative ${
+              className={`group glass-dark rounded-3xl overflow-hidden shadow-elegant transition-all duration-700 hover:-translate-y-3 relative border-2 border-primary/20 hover:border-primary/40 ${
                 visibleProjects.includes(index) 
                   ? 'animate-fade-in translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
