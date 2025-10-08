@@ -33,7 +33,7 @@ const Hero = () => {
               </div>
               
               <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                <span className="text-neon drop-shadow-[0_0_30px_hsl(var(--primary)/0.8)]">Hi, I'm Chinni Sreya Sri</span>
+                <span className="text-neon drop-shadow-[0_0_30px_hsl(var(--primary)/0.8)]">Hi, I'm Sreya Sri</span>
               </h1>
             </div>
             
