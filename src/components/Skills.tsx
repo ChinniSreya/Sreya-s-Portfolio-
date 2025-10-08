@@ -88,7 +88,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 section-gradient overflow-hidden relative">
+    <section id="skills" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden relative bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 right-1/4 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-pulse-slow"></div>

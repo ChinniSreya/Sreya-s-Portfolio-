@@ -62,7 +62,7 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 sm:py-28 px-6 section-gradient overflow-hidden relative">
+    <section id="projects" className="py-20 sm:py-28 px-6 overflow-hidden relative bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]">
       {/* Animated Background decoration */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-20 left-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse-slow"></div>

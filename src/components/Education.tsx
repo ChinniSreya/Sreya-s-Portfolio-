@@ -28,7 +28,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 sm:py-28 px-6 section-gradient relative overflow-hidden">
+    <section id="education" className="py-20 sm:py-28 px-6 relative overflow-hidden bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]">
       {/* Soft background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>

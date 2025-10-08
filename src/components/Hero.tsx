@@ -58,17 +58,6 @@ const Hero = () => {
               </button>
             </div>
 
-            {/* Skill badges */}
-            <div className="flex flex-wrap gap-3 justify-center items-center pt-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              {['React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'HTML/CSS'].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 rounded-full glass-dark border border-primary/20 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground transition-all duration-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

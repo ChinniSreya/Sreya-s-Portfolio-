@@ -22,7 +22,7 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 section-gradient relative overflow-hidden">
+    <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-accent/20 to-transparent rounded-full blur-3xl"></div>

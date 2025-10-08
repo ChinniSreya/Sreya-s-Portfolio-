@@ -57,7 +57,7 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 section-gradient relative overflow-hidden">
+    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]">
       {/* Professional Background Design */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>

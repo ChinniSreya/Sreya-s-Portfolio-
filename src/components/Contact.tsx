@@ -103,7 +103,7 @@ const Contact = () => {
     <section 
       ref={sectionRef}
       id="contact" 
-      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 section-gradient relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]"
     >
       {/* Professional Background Design */}
       <div className="absolute inset-0 opacity-30">
