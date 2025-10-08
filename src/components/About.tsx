@@ -40,11 +40,12 @@ const About = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className={`order-2 lg:order-1 space-y-6 transition-all duration-700 delay-200 ${
-            isVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-12'
-          }`}>
-            <div className="glass-dark rounded-3xl p-8 space-y-6 shadow-neon border border-primary/20">
+        <div className={`glass-dark rounded-3xl p-8 lg:p-12 shadow-neon border border-primary/20 transition-all duration-700 ${
+          isVisible ? 'animate-fade-in opacity-100' : 'opacity-0 translate-y-8'
+        }`}>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left: Intro Text */}
+            <div className="space-y-6">
               <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
                 Frontend Developer & <span className="text-gradient">UI Enthusiast</span>
               </h3>
@@ -62,28 +63,19 @@ const About = () => {
                   I continuously explore the latest trends in <span className="text-gradient font-semibold">UI/UX design</span> to bring innovation and elegance to every project, bridging the gap between aesthetics and functionality.
                 </p>
               </div>
-              
-              <div className="flex flex-wrap gap-3 pt-4">
-                {['React', 'TypeScript', 'Tailwind CSS', 'Responsive Design'].map((skill, i) => (
-                  <span key={i} className="px-4 py-2 rounded-xl bg-primary/20 text-primary font-medium text-sm border border-primary/30 hover:bg-primary/30 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)] transition-all duration-300">
-                    {skill}
-                  </span>
-                ))}
-              </div>
             </div>
-          </div>
-          
-          <div className={`order-1 lg:order-2 relative flex justify-center transition-all duration-700 delay-400 ${
-            isVisible ? 'animate-scale-in opacity-100' : 'opacity-0 scale-95'
-          }`}>
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-purple-500 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse"></div>
-              <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden shadow-neon ring-4 ring-primary/30 group-hover:ring-primary/50 transition-all duration-500 group-hover:scale-105">
-                <img 
-                  src="/lovable-uploads/b5a29d4e-e8f9-4cc2-9fbd-40f228ca3427.png"
-                  alt="Chinni Sreya Sri - Frontend Developer"
-                  className="w-full h-full object-cover object-center"
-                />
+            
+            {/* Right: Picture */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-purple-500 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse"></div>
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl overflow-hidden shadow-neon ring-4 ring-primary/30 group-hover:ring-primary/50 transition-all duration-500 group-hover:scale-105">
+                  <img 
+                    src="/lovable-uploads/b5a29d4e-e8f9-4cc2-9fbd-40f228ca3427.png"
+                    alt="Chinni Sreya Sri - Frontend Developer"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
           </div>

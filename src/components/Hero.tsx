@@ -29,18 +29,12 @@ const Hero = () => {
             <div className="space-y-6 animate-fade-in">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark shadow-neon animate-scale-in">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))]"></div>
-                <span className="text-sm font-medium text-foreground">Available for opportunities</span>
+                <span className="text-sm font-medium text-foreground">Front End Enthusiastic</span>
               </div>
               
               <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                <span className="text-foreground">Hi, I'm </span>
-                <br className="hidden sm:block" />
-                <span className="text-neon drop-shadow-[0_0_30px_hsl(var(--primary)/0.8)]">Chinni Sreya Sri</span>
+                <span className="text-neon drop-shadow-[0_0_30px_hsl(var(--primary)/0.8)]">Hi, I'm Chinni Sreya Sri</span>
               </h1>
-              
-              <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-primary/90 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                Frontend Developer
-              </p>
             </div>
             
             {/* Description */}
