@@ -24,68 +24,50 @@ const Hero = () => {
       
       <div className="relative flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center pt-20">
-          <div className="space-y-10">
+          <div className="space-y-8">
             {/* Header content */}
-            <div className="space-y-6 animate-fade-in">
+            <div className="space-y-4 animate-fade-in">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark shadow-neon animate-scale-in">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))]"></div>
                 <span className="text-sm font-medium text-foreground">Front End Enthusiastic</span>
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                <span className="text-neon drop-shadow-[0_0_30px_hsl(var(--primary)/0.8)]">Hi, I'm Sreya Sri</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                Hi, I'm <span className="text-gradient drop-shadow-[0_0_30px_hsl(var(--primary)/0.8)]">Sreya Sri</span>
               </h1>
             </div>
             
             {/* Description */}
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in backdrop-blur-sm" style={{ animationDelay: '0.3s' }}>
-              Crafting <span className="text-primary font-semibold">beautiful</span>, <span className="text-accent font-semibold">responsive</span>, and user-friendly web interfaces with modern technologies. 
-              Passionate about creating <span className="text-gradient font-semibold">exceptional digital experiences</span> that make a difference.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              A passionate developer focused on crafting modern, user-friendly websites and apps. I enjoy turning ideas into reality.
             </p>
 
-            {/* Social links */}
-            <div className="flex justify-center gap-6 animate-scale-in" style={{ animationDelay: '0.4s' }}>
-              <a
-                href="https://www.linkedin.com/in/chinni-sreya-sri-779514249"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-2 rounded-xl glass-dark hover:border-primary hover:shadow-neon transition-all duration-300"
-              >
-                <Linkedin size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
-                <span className="font-medium text-muted-foreground group-hover:text-primary transition-colors">LinkedIn</span>
-              </a>
-              <a
-                href="https://github.com/ChinniSreya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-2 rounded-xl glass-dark hover:border-accent hover:shadow-[0_0_20px_hsl(var(--accent)/0.4)] transition-all duration-300"
-              >
-                <Github size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
-                <span className="font-medium text-muted-foreground group-hover:text-accent transition-colors">GitHub</span>
-              </a>
-            </div>
-            
             {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 pb-20 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="flex flex-wrap gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <button 
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group px-8 py-4 rounded-2xl bg-primary hover:bg-primary-dark text-primary-foreground font-semibold shadow-neon hover:shadow-[0_0_40px_hsl(var(--primary)/0.8)] transition-all duration-300 hover:scale-105"
+                className="group px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold shadow-neon hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] transition-all duration-300 hover:scale-105"
               >
                 View My Work
               </button>
               <button 
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group px-8 py-4 rounded-2xl glass-dark border-2 border-primary/30 hover:border-primary text-foreground hover:text-primary font-semibold transition-all duration-300 hover:shadow-neon hover:scale-105 flex items-center gap-2"
+                className="group px-6 py-3 rounded-full glass-dark border border-primary/30 hover:border-primary text-foreground font-semibold transition-all duration-300 hover:scale-105"
               >
-                <Download size={20} className="transition-transform group-hover:translate-y-0.5" />
-                Download Resume
+                Contact Me
               </button>
             </div>
-            
-            {/* Scroll indicator */}
-            <div className="mt-8 mb-10 flex flex-col items-center gap-2 animate-bounce">
-              <span className="text-sm text-muted-foreground">Scroll to explore</span>
-              <ArrowDown size={20} className="text-primary drop-shadow-[0_0_10px_hsl(var(--primary)/0.8)]" />
+
+            {/* Skill badges */}
+            <div className="flex flex-wrap gap-3 justify-center items-center pt-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              {['React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'HTML/CSS'].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 rounded-full glass-dark border border-primary/20 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground transition-all duration-300"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </div>
