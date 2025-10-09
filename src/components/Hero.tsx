@@ -58,6 +58,24 @@ const Hero = () => {
               </button>
             </div>
 
+            {/* Scroll down arrow */}
+            <div className="flex justify-center pt-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <button
+                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+                aria-label="Scroll down"
+              >
+                <span className="text-sm font-medium">Scroll Down</span>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <ArrowDown 
+                    size={28} 
+                    className="relative animate-bounce text-primary drop-shadow-[0_0_10px_hsl(var(--primary)/0.5)]" 
+                  />
+                </div>
+              </button>
+            </div>
+
           </div>
         </div>
       </div>
