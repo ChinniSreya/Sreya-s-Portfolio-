@@ -40,42 +40,40 @@ const About = () => {
           </p>
         </div>
         
-        <div className={`glass-dark rounded-3xl p-8 lg:p-12 shadow-neon border border-primary/20 transition-all duration-700 ${
+        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700 ${
           isVisible ? 'animate-fade-in opacity-100' : 'opacity-0 translate-y-8'
         }`}>
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left: Intro Text */}
-            <div className="space-y-6">
-              <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
-                Frontend Developer & <span className="text-gradient">UI Enthusiast</span>
-              </h3>
-              
-              <div className="space-y-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  I specialize in crafting <span className="text-primary font-semibold">responsive, user-friendly</span> websites and web applications using modern technologies like <span className="text-accent font-semibold">React, TypeScript,</span> and <span className="text-primary font-semibold">Tailwind CSS</span>.
-                </p>
-                
-                <p>
-                  My approach combines <span className="text-foreground font-semibold">clean, maintainable code</span> with thoughtful design, ensuring seamless user interactions and optimal performance across all devices.
-                </p>
-                
-                <p>
-                  I continuously explore the latest trends in <span className="text-gradient font-semibold">UI/UX design</span> to bring innovation and elegance to every project, bridging the gap between aesthetics and functionality.
-                </p>
-              </div>
-            </div>
+          {/* Left: Intro Text */}
+          <div className="space-y-6">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
+              Frontend Developer & <span className="text-gradient">UI Enthusiast</span>
+            </h3>
             
-            {/* Right: Picture */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-purple-500 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse"></div>
-                <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl overflow-hidden shadow-neon ring-4 ring-primary/30 group-hover:ring-primary/50 transition-all duration-500 group-hover:scale-105">
-                  <img 
-                    src="/lovable-uploads/b5a29d4e-e8f9-4cc2-9fbd-40f228ca3427.png"
-                    alt="Chinni Sreya Sri - Frontend Developer"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
+            <div className="space-y-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <p>
+                I specialize in crafting <span className="text-primary font-semibold">responsive, user-friendly</span> websites and web applications using modern technologies like <span className="text-accent font-semibold">React, TypeScript,</span> and <span className="text-primary font-semibold">Tailwind CSS</span>.
+              </p>
+              
+              <p>
+                My approach combines <span className="text-foreground font-semibold">clean, maintainable code</span> with thoughtful design, ensuring seamless user interactions and optimal performance across all devices.
+              </p>
+              
+              <p>
+                I continuously explore the latest trends in <span className="text-gradient font-semibold">UI/UX design</span> to bring innovation and elegance to every project, bridging the gap between aesthetics and functionality.
+              </p>
+            </div>
+          </div>
+          
+          {/* Right: Picture */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-purple-500 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse"></div>
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-neon ring-4 ring-primary/30 group-hover:ring-primary/50 transition-all duration-500 group-hover:scale-105">
+                <img 
+                  src="/lovable-uploads/b5a29d4e-e8f9-4cc2-9fbd-40f228ca3427.png"
+                  alt="Chinni Sreya Sri - Frontend Developer"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
             </div>
           </div>
