@@ -103,24 +103,17 @@ const Contact = () => {
     <section 
       ref={sectionRef}
       id="contact" 
-      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]"
+      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative overflow-hidden section-gradient"
     >
-      {/* Professional Background Design */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl"></div>
-      </div>
       <div className="max-w-6xl mx-auto relative z-10">
         <div className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-700 ${
           isVisible ? 'animate-fade-in translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}>
-          <div className="flex items-center justify-center gap-3 mb-4 sm:mb-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              Let's <span className="text-neon">Connect</span>
-            </h2>
-          </div>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            Let's Connect
+          </h2>
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto px-4">
             Ready to bring your next project to life? Let's discuss how we can work together!
           </p>
         </div>
@@ -129,9 +122,9 @@ const Contact = () => {
           <div className={`space-y-6 sm:space-y-8 transition-all duration-700 ${
             isVisible ? 'animate-fade-in translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
           }`} style={{ animationDelay: '200ms' }}>
-            <div className="glass-dark rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-neon border border-primary/20">
+            <div className="glass-dark rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-border">
               <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <h3 className="text-xl sm:text-2xl font-bold text-neon">Get in touch</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-primary">Get in touch</h3>
               </div>
               <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8">
                 I'm always excited to work on new projects and collaborate with amazing people. 
@@ -159,13 +152,13 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className={`glass-dark rounded-xl sm:rounded-2xl shadow-neon p-4 sm:p-6 lg:p-8 border border-primary/20 transition-all duration-700 ${
+          <div className={`glass-dark rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-border transition-all duration-700 ${
             isVisible ? 'animate-fade-in translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
           }`} style={{ animationDelay: '400ms' }}>
             {!isSubmitted ? (
               <>
                 <div className="flex items-center gap-2 mb-4 sm:mb-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-neon">Send Message</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-primary">Send Message</h3>
                 </div>
                 
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">

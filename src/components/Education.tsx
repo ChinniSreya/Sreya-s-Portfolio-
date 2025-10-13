@@ -28,77 +28,57 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 sm:py-28 px-6 relative overflow-hidden bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]">
-      {/* Soft background decoration */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
-      </div>
-      
+    <section id="education" className="py-20 sm:py-28 px-6 relative overflow-hidden section-gradient">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="text-gradient">Education</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+            Education
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Academic background and qualifications
+          </p>
         </div>
 
-        <div className="relative">
-          {/* Modern vertical timeline */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/30 via-accent/30 to-primary/30 hidden sm:block"></div>
-          
-          <div className="space-y-12">
-            {educationData.map((edu, index) => (
-              <div
-                key={index}
-                className={`relative flex flex-col sm:flex-row gap-6 sm:gap-8 items-start animate-fade-in ${
-                  index % 2 === 0 ? 'sm:flex-row-reverse' : ''
-                }`}
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-6 sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))] hidden sm:block"></div>
-                
-                {/* Card */}
-                <div className={`flex-1 ${index % 2 === 0 ? 'sm:text-right' : ''}`}>
-                  <div className="glass-dark rounded-2xl p-6 sm:p-8 border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-elegant">
-                    <div className="space-y-3">
-                      <div className={`flex items-center gap-3 flex-wrap ${index % 2 === 0 ? 'sm:justify-end' : ''}`}>
-                        <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-                          {edu.level}
-                        </h3>
-                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                          edu.status === 'Pursuing' 
-                            ? 'bg-primary/20 text-primary border border-primary/30' 
-                            : 'bg-muted/50 text-muted-foreground border border-muted'
-                        }`}>
-                          {edu.status}
-                        </span>
-                      </div>
-                      
-                      <h4 className="text-lg font-semibold text-primary">
-                        {edu.institution}
-                      </h4>
-                      
-                      <p className="text-muted-foreground">
-                        {edu.stream}
-                      </p>
-                      
-                      <div className={`flex items-center gap-4 flex-wrap text-sm ${index % 2 === 0 ? 'sm:justify-end' : ''}`}>
-                        <span className="text-muted-foreground">📅 {edu.year}</span>
-                        <span className="px-4 py-1.5 rounded-xl bg-primary/10 text-primary font-semibold border border-primary/20">
-                          {edu.score}
-                        </span>
-                      </div>
-                    </div>
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {educationData.map((edu, index) => (
+            <div
+              key={index}
+              className="glass-dark rounded-xl p-6 sm:p-8 border border-border hover:border-primary/40 transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 flex-wrap mb-2">
+                    <h3 className="text-xl font-bold text-foreground">
+                      {edu.level}
+                    </h3>
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      edu.status === 'Pursuing' 
+                        ? 'bg-primary/10 text-primary border border-primary/30' 
+                        : 'bg-muted/30 text-muted-foreground border border-border'
+                    }`}>
+                      {edu.status}
+                    </span>
                   </div>
+                  <h4 className="text-lg font-semibold text-primary mb-2">
+                    {edu.institution}
+                  </h4>
+                  <p className="text-muted-foreground text-sm">
+                    {edu.stream}
+                  </p>
                 </div>
-                
-                {/* Spacer for alternating layout */}
-                <div className="flex-1 hidden sm:block"></div>
+                <div className="flex sm:flex-col items-start gap-3 sm:text-right">
+                  <span className="text-sm text-muted-foreground whitespace-nowrap">
+                    {edu.year}
+                  </span>
+                  <span className="px-4 py-1.5 rounded-lg bg-primary/10 text-primary font-semibold text-sm border border-primary/20 whitespace-nowrap">
+                    {edu.score}
+                  </span>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -5,20 +5,14 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
       {/* Dark gradient base */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background"></div>
       
       {/* Animated mesh overlay */}
-      <div className="absolute inset-0 opacity-60" style={{ background: 'var(--gradient-mesh)' }}></div>
+      <div className="absolute inset-0 opacity-50" style={{ background: 'var(--gradient-mesh)' }}></div>
       
-      {/* Neon glow effects with enhanced colors */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-primary/40 via-purple-500/30 to-transparent rounded-full blur-3xl animate-float opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-gradient-to-tr from-purple-600/35 via-fuchsia-500/25 to-transparent rounded-full blur-3xl animate-float opacity-45" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/25 to-purple-500/25 rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: '2s' }}></div>
-      
-      {/* Accent neon streaks */}
-      <div className="absolute top-1/4 right-1/4 w-[400px] h-[3px] bg-gradient-to-r from-transparent via-primary/70 to-transparent blur-sm animate-pulse"></div>
-      <div className="absolute bottom-1/3 left-1/4 w-[350px] h-[3px] bg-gradient-to-r from-transparent via-purple-400/60 to-transparent blur-sm animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-      <div className="absolute top-1/2 right-1/3 w-[250px] h-[2px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent blur-sm animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+      {/* Subtle glow effects */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-3xl animate-float opacity-30"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/15 rounded-full blur-3xl animate-float opacity-25" style={{ animationDelay: '1s' }}></div>
       
       <Navigation />
       

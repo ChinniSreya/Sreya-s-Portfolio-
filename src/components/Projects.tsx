@@ -62,25 +62,15 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 sm:py-28 px-6 overflow-hidden relative bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]">
-      {/* Animated Background decoration */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-accent/30 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-primary-glow/20 rounded-full blur-3xl animate-float"></div>
-      </div>
-      
-      {/* Decorative geometric shapes */}
-      <div className="absolute top-40 right-20 w-20 h-20 border-2 border-primary/20 rounded-lg rotate-45 animate-spin-slow"></div>
-      <div className="absolute bottom-40 left-20 w-16 h-16 border-2 border-accent/20 rounded-full animate-pulse-slow"></div>
+    <section id="projects" className="py-20 sm:py-28 px-6 overflow-hidden relative section-gradient">
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 sm:mb-20 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="text-gradient">Projects</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+            Featured Projects
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Innovative solutions crafted with modern technologies and thoughtful design
           </p>
         </div>

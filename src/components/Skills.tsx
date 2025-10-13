@@ -88,25 +88,15 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden relative bg-gradient-to-br from-[hsl(230,50%,10%)] via-[hsl(250,60%,15%)] to-[hsl(270,50%,12%)]">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 right-1/4 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-40 left-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
-      </div>
-      
-      {/* Decorative floating elements */}
-      <div className="absolute top-1/4 left-10 w-3 h-3 bg-primary rounded-full animate-float"></div>
-      <div className="absolute top-1/3 right-20 w-2 h-2 bg-accent rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
-      <div className="absolute bottom-1/4 right-1/3 w-4 h-4 bg-primary-glow rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+    <section id="skills" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden relative section-gradient">
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 sm:mb-20 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Skills & <span className="text-gradient">Expertise</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+            Skills & Expertise
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Technologies and tools that power my development workflow
           </p>
         </div>
@@ -131,8 +121,8 @@ const Skills = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full"></div>
               
               <div className="mb-8 text-center relative z-10">
-                <h3 className="text-xl font-bold text-neon">{category.title}</h3>
-                <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-3 rounded-full animate-glow"></div>
+                <h3 className="text-xl font-bold text-primary">{category.title}</h3>
+                <div className="w-12 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
               </div>
               <div className="space-y-3 relative z-10">
                 {category.skills.map((skill, skillIndex) => (
@@ -147,11 +137,11 @@ const Skills = () => {
         </div>
 
         <div className="text-center mb-16 animate-fade-in">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-4">
-            <span className="text-gradient">Achievements</span> & Recognition
+          <h3 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+            Achievements & Recognition
           </h3>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Milestones that showcase my journey and contributions
           </p>
         </div>
@@ -176,10 +166,10 @@ const Skills = () => {
               <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-br-full"></div>
               <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-accent/20 to-transparent rounded-tl-full"></div>
               
-              <div className={`bg-gradient-to-r ${achievement.color} text-white px-5 py-2.5 rounded-2xl text-sm font-bold mb-6 inline-block shadow-neon relative z-10 animate-glow`}>
+              <div className={`bg-gradient-to-r ${achievement.color} text-white px-5 py-2.5 rounded-lg text-sm font-bold mb-6 inline-block relative z-10`}>
                 {achievement.position}
               </div>
-              <h4 className="text-lg font-bold text-neon mb-3 relative z-10">{achievement.title}</h4>
+              <h4 className="text-lg font-bold text-primary mb-3 relative z-10">{achievement.title}</h4>
               <p className="text-muted-foreground leading-relaxed relative z-10">{achievement.description}</p>
             </div>
           ))}
