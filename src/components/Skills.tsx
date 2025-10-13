@@ -84,6 +84,12 @@ const Skills = () => {
       position: "Organizer",
       description: "Successfully organized and managed a 36-hour hackathon event",
       color: "from-red-400 to-rose-500"
+    },
+    {
+      title: "Paper Presentation Leadership",
+      position: "Team Lead",
+      description: "Successfully led a team in paper presentation at a conference",
+      color: "from-indigo-400 to-blue-500"
     }
   ];
 

@@ -50,12 +50,6 @@ const Certifications = () => {
       provider: "Smart Bridge",
       category: "Internship",
       skills: ["Salesforce Administration", "CRM Management", "Apex Development", "Lightning Components"]
-    },
-    {
-      title: "Paper Presentation Leadership",
-      provider: "Conference",
-      category: "Achievement",
-      skills: ["Team Leadership", "Research", "Public Speaking", "Technical Presentation"]
     }
   ];
 
@@ -69,7 +63,7 @@ const Certifications = () => {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Successfully led a team in paper presentation at a conference
+            Professional certifications and credentials
           </p>
         </div>
 
