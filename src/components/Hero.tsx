@@ -4,15 +4,11 @@ import Navigation from "./Navigation";
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Dark gradient base */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background"></div>
+      {/* Clean gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/20"></div>
       
-      {/* Animated mesh overlay */}
-      <div className="absolute inset-0 opacity-50" style={{ background: 'var(--gradient-mesh)' }}></div>
-      
-      {/* Subtle glow effects */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-3xl animate-float opacity-30"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/15 rounded-full blur-3xl animate-float opacity-25" style={{ animationDelay: '1s' }}></div>
+      {/* Subtle accent */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
       
       <Navigation />
       
@@ -21,13 +17,13 @@ const Hero = () => {
           <div className="space-y-12">
             {/* Header content */}
             <div className="space-y-6 animate-fade-in">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-dark shadow-neon animate-scale-in">
-                <div className="w-3 h-3 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))]"></div>
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-muted/30 border border-border animate-scale-in">
+                <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
                 <span className="text-base sm:text-lg font-medium text-foreground">Front End Enthusiastic</span>
               </div>
               
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                Hi, I'm <span className="text-gradient drop-shadow-[0_0_30px_hsl(var(--primary)/0.8)]">Sreya Sri</span>
+                Hi, I'm <span className="text-primary">Sreya Sri</span>
               </h1>
             </div>
             
@@ -40,16 +36,40 @@ const Hero = () => {
             <div className="flex flex-wrap gap-6 justify-center items-center animate-fade-in pt-4" style={{ animationDelay: '0.3s' }}>
               <button 
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group px-8 py-4 text-base sm:text-lg rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold shadow-neon hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] transition-all duration-300 hover:scale-105"
+                className="group px-8 py-4 text-base sm:text-lg rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105"
               >
                 View My Work
               </button>
               <button 
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group px-8 py-4 text-base sm:text-lg rounded-full glass-dark border border-primary/30 hover:border-primary text-foreground font-semibold transition-all duration-300 hover:scale-105"
+                className="group px-8 py-4 text-base sm:text-lg rounded-full border-2 border-primary text-foreground font-semibold hover:bg-primary/10 transition-all duration-300 hover:scale-105"
               >
                 Contact Me
               </button>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-6 justify-center items-center animate-fade-in pt-2" style={{ animationDelay: '0.35s' }}>
+              <a 
+                href="https://www.linkedin.com/in/chinnisreyasri/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-3 rounded-full border border-primary/30 hover:border-primary text-foreground hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin size={20} className="text-primary" />
+                <span className="text-sm font-medium">LinkedIn</span>
+              </a>
+              <a 
+                href="https://github.com/ChinniSreya" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-3 rounded-full border border-primary/30 hover:border-primary text-foreground hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+                aria-label="GitHub Profile"
+              >
+                <Github size={20} className="text-primary" />
+                <span className="text-sm font-medium">GitHub</span>
+              </a>
             </div>
 
             {/* Scroll down arrow */}
@@ -60,13 +80,10 @@ const Hero = () => {
                 aria-label="Scroll down"
               >
                 <span className="text-sm font-medium">Scroll Down</span>
-                <div className="relative">
-                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <ArrowDown 
-                    size={28} 
-                    className="relative animate-bounce text-primary drop-shadow-[0_0_10px_hsl(var(--primary)/0.5)]" 
-                  />
-                </div>
+                <ArrowDown 
+                  size={28} 
+                  className="animate-bounce text-primary" 
+                />
               </button>
             </div>
 

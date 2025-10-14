@@ -44,35 +44,35 @@ const Education = () => {
           {educationData.map((edu, index) => (
             <div
               key={index}
-              className="glass-dark rounded-xl p-6 sm:p-8 border border-border hover:border-primary/40 transition-all duration-300 animate-fade-in"
+              className="bg-card rounded-lg p-6 border border-border hover:border-primary/50 transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 flex-wrap mb-2">
-                    <h3 className="text-xl font-bold text-foreground">
+                  <div className="flex items-center gap-3 flex-wrap mb-3">
+                    <h3 className="text-xl font-semibold text-foreground">
                       {edu.level}
                     </h3>
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                       edu.status === 'Pursuing' 
-                        ? 'bg-primary/10 text-primary border border-primary/30' 
-                        : 'bg-muted/30 text-muted-foreground border border-border'
+                        ? 'bg-primary/10 text-primary border border-primary/20' 
+                        : 'bg-muted text-muted-foreground'
                     }`}>
                       {edu.status}
                     </span>
                   </div>
-                  <h4 className="text-lg font-semibold text-primary mb-2">
+                  <h4 className="text-base font-medium text-foreground mb-2">
                     {edu.institution}
                   </h4>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm mb-3">
                     {edu.stream}
                   </p>
                 </div>
-                <div className="flex sm:flex-col items-start gap-3 sm:text-right">
-                  <span className="text-sm text-muted-foreground whitespace-nowrap">
+                <div className="flex flex-col gap-2 sm:items-end">
+                  <span className="text-sm font-medium text-foreground">
                     {edu.year}
                   </span>
-                  <span className="px-4 py-1.5 rounded-lg bg-primary/10 text-primary font-semibold text-sm border border-primary/20 whitespace-nowrap">
+                  <span className="px-3 py-1 rounded bg-primary/10 text-primary font-semibold text-sm">
                     {edu.score}
                   </span>
                 </div>
