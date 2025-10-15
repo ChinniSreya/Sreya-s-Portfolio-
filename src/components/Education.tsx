@@ -68,11 +68,11 @@ const Education = () => {
                     {edu.stream}
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 sm:items-end">
-                  <span className="text-sm font-medium text-foreground">
+                <div className="flex flex-col gap-3 items-end min-w-[120px]">
+                  <span className="text-base font-medium text-muted-foreground">
                     {edu.year}
                   </span>
-                  <span className="px-3 py-1 rounded bg-primary/10 text-primary font-semibold text-sm">
+                  <span className="px-4 py-1.5 rounded bg-primary/10 text-primary font-semibold text-base">
                     {edu.score}
                   </span>
                 </div>
