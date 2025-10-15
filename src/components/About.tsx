@@ -47,15 +47,15 @@ const About = () => {
             
             <div className="space-y-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
-                I specialize in crafting <span className="text-primary font-semibold">responsive, user-friendly</span> websites and web applications using modern technologies like <span className="text-primary font-semibold">React, TypeScript,</span> and <span className="text-primary font-semibold">Tailwind CSS</span>.
+                A passionate Front-End Developer focused on crafting <span className="text-primary font-semibold">responsive, engaging, and user-friendly</span> web interfaces. Skilled in <span className="text-primary font-semibold">HTML, CSS, JavaScript, and React.js</span>, with a strong eye for clean design and performance optimization.
               </p>
               
               <p>
-                My approach combines <span className="text-foreground font-semibold">clean, maintainable code</span> with thoughtful design, ensuring seamless user interactions and optimal performance across all devices.
+                Dedicated to transforming creative ideas into seamless digital experiences that enhance usability and aesthetics. Continuously learning modern frameworks and best practices to stay ahead in the evolving tech landscape.
               </p>
               
               <p>
-                I continuously explore the latest trends in <span className="text-primary font-semibold">UI/UX design</span> to bring innovation and elegance to every project, bridging the gap between aesthetics and functionality.
+                With a keen interest in <span className="text-primary font-semibold">interactive design and problem-solving</span>, I aim to develop innovative web solutions that deliver both functionality and visual appeal. My goal is to build intuitive applications that create meaningful impact for users and businesses alike.
               </p>
             </div>
           </div>
