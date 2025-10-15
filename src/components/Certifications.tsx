@@ -1,30 +1,28 @@
-
 import { Award, CheckCircle, Calendar, Building } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const Certifications = () => {
-  const [visibleCerts, setVisibleCerts] = useState<number[]>([]);
-  const certRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: [0.4, 0, 0.2, 1] as any,
+        staggerChildren: 0.2
+      }
+    } as any
+  };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute('data-cert-index') || '0');
-            setVisibleCerts(prev => [...new Set([...prev, index])]);
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: '50px' }
-    );
-
-    certRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as any }
+    } as any
+  };
   
   const certifications = [
     {
@@ -54,10 +52,17 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden section-gradient">
+    <motion.section 
+      id="certifications" 
+      className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden section-gradient"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={containerVariants}
+    >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
+        <motion.div className="text-center mb-12" variants={itemVariants}>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Achievements & Certifications
           </h2>
@@ -65,24 +70,15 @@ const Certifications = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Professional certifications and credentials
           </p>
-        </div>
+        </motion.div>
 
         {/* Certifications Grid */}
         <div className="grid lg:grid-cols-2 gap-6 mb-12">
           {certifications.map((cert, index) => (
-            <div
+            <motion.div
               key={index}
-              ref={(el) => (certRefs.current[index] = el)}
-              data-cert-index={index}
-              className={`glass-dark rounded-xl card-hover transition-all duration-700 transform border border-border overflow-hidden ${
-                visibleCerts.includes(index) 
-                  ? 'animate-fade-in translate-y-0 opacity-100' 
-                  : 'translate-y-8 opacity-0'
-              }`}
-              style={{ 
-                animationDelay: `${index * 200}ms`,
-                transitionDelay: `${index * 100}ms`
-              }}
+              variants={itemVariants}
+              className="glass-dark rounded-xl card-hover transition-all duration-300 transform border border-border overflow-hidden"
             >
               {/* Card Header */}
               <div className="p-6 border-b border-border">
@@ -132,11 +128,11 @@ const Certifications = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

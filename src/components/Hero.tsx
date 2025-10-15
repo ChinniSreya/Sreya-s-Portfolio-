@@ -1,9 +1,38 @@
 import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
 import Navigation from "./Navigation";
+import { motion } from "framer-motion";
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: [0.4, 0, 0.2, 1] as any,
+        staggerChildren: 0.2
+      }
+    } as any
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as any }
+    } as any
+  };
+
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+    <motion.section 
+      id="home" 
+      className="relative min-h-screen overflow-hidden"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
       {/* Clean gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/20"></div>
       
@@ -16,24 +45,30 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto text-center pt-20">
           <div className="space-y-12">
             {/* Header content */}
-            <div className="space-y-6 animate-fade-in">
+            <motion.div className="space-y-6" variants={itemVariants}>
               <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-muted/30 border border-border animate-scale-in">
                 <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
                 <span className="text-base sm:text-lg font-medium text-foreground">Front End Enthusiastic</span>
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
                 Hi, I'm <span className="text-primary">Sreya Sri</span>
               </h1>
-            </div>
+            </motion.div>
             
             {/* Description */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <motion.p 
+              className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              variants={itemVariants}
+            >
               A passionate developer focused on crafting modern, user-friendly websites and apps. I enjoy turning ideas into reality.
-            </p>
+            </motion.p>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-6 justify-center items-center animate-fade-in pt-4" style={{ animationDelay: '0.3s' }}>
+            <motion.div 
+              className="flex flex-wrap gap-6 justify-center items-center pt-4"
+              variants={itemVariants}
+            >
               <button 
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group px-8 py-4 text-base sm:text-lg rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105"
@@ -46,10 +81,13 @@ const Hero = () => {
               >
                 Contact Me
               </button>
-            </div>
+            </motion.div>
 
             {/* Social Links */}
-            <div className="flex gap-6 justify-center items-center animate-fade-in pt-2" style={{ animationDelay: '0.35s' }}>
+            <motion.div 
+              className="flex gap-6 justify-center items-center pt-2"
+              variants={itemVariants}
+            >
               <a 
                 href="https://www.linkedin.com/in/chinnisreyasri/" 
                 target="_blank" 
@@ -70,10 +108,13 @@ const Hero = () => {
                 <Github size={20} className="text-primary" />
                 <span className="text-sm font-medium">GitHub</span>
               </a>
-            </div>
+            </motion.div>
 
             {/* Scroll down arrow */}
-            <div className="flex justify-center pt-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <motion.div 
+              className="flex justify-center pt-12"
+              variants={itemVariants}
+            >
               <button
                 onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -85,12 +126,12 @@ const Hero = () => {
                   className="animate-bounce text-primary" 
                 />
               </button>
-            </div>
+            </motion.div>
 
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

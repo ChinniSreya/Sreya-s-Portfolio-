@@ -1,5 +1,29 @@
+import { GraduationCap, Calendar, Award, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Education = () => {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: [0.4, 0, 0.2, 1] as any,
+        staggerChildren: 0.2
+      }
+    } as any
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as any }
+    } as any
+  };
+
   const educationData = [
     {
       level: "Bachelor of Technology",
@@ -28,9 +52,16 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 sm:py-28 px-6 relative overflow-hidden section-gradient">
+    <motion.section 
+      id="education" 
+      className="py-20 sm:py-28 px-6 relative overflow-hidden section-gradient"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={containerVariants}
+    >
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <motion.div className="text-center mb-16" variants={itemVariants}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
             Education
           </h2>
@@ -38,14 +69,14 @@ const Education = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Academic background and qualifications
           </p>
-        </div>
+        </motion.div>
 
         <div className="space-y-6 max-w-4xl mx-auto">
           {educationData.map((edu, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-card rounded-lg p-6 border border-border hover:border-primary/50 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              variants={itemVariants}
+              className="bg-card rounded-lg p-6 border border-border hover:border-primary/50 transition-all duration-300"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
@@ -77,11 +108,11 @@ const Education = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,32 +1,40 @@
-
-import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const aboutRef = useRef<HTMLDivElement>(null);
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: [0.4, 0, 0.2, 1] as any,
+        staggerChildren: 0.2
+      }
+    } as any
+  };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2, rootMargin: '50px' }
-    );
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as any }
+    } as any
+  };
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
   return (
-    <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden section-gradient">
-      <div className="max-w-7xl mx-auto relative z-10" ref={aboutRef}>
-        <div className={`text-center mb-16 sm:mb-20 transition-all duration-700 ${
-          isVisible ? 'animate-fade-in opacity-100' : 'opacity-0 translate-y-8'
-        }`}>
+    <motion.section 
+      id="about" 
+      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden section-gradient"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={containerVariants}
+    >
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div className="text-center mb-16 sm:mb-20" variants={itemVariants}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
             About Me
           </h2>
@@ -34,11 +42,9 @@ const About = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Passionate about crafting exceptional digital experiences
           </p>
-        </div>
+        </motion.div>
         
-        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700 ${
-          isVisible ? 'animate-fade-in opacity-100' : 'opacity-0 translate-y-8'
-        }`}>
+        <motion.div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" variants={itemVariants}>
           {/* Left: Intro Text */}
           <div className="space-y-6">
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
@@ -73,9 +79,9 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

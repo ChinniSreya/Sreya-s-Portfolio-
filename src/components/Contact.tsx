@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Send, MessageSquare, Calendar, CheckCircle } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,28 +11,29 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const { toast } = useToast();
-  const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: '50px' }
-    );
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: [0.4, 0, 0.2, 1] as any,
+        staggerChildren: 0.2
+      }
+    } as any
+  };
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as any }
+    } as any
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,15 +102,16 @@ const Contact = () => {
   ];
 
   return (
-    <section 
-      ref={sectionRef}
+    <motion.section 
       id="contact" 
       className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative overflow-hidden section-gradient"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={containerVariants}
     >
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-700 ${
-          isVisible ? 'animate-fade-in translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-        }`}>
+        <motion.div className="text-center mb-8 sm:mb-12 lg:mb-16" variants={itemVariants}>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Let's Connect
           </h2>
@@ -116,12 +119,10 @@ const Contact = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto px-4">
             Ready to bring your next project to life? Let's discuss how we can work together!
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className={`space-y-6 sm:space-y-8 transition-all duration-700 ${
-            isVisible ? 'animate-fade-in translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
-          }`} style={{ animationDelay: '200ms' }}>
+          <motion.div className="space-y-6 sm:space-y-8" variants={itemVariants}>
             <div className="glass-dark rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-border">
               <div className="flex items-center gap-3 mb-4 sm:mb-6">
                 <h3 className="text-xl sm:text-2xl font-bold text-primary">Get in touch</h3>
@@ -150,11 +151,9 @@ const Contact = () => {
                 <p className="text-muted-foreground text-xs sm:text-sm">I typically respond within 24 hours!</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className={`glass-dark rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-border transition-all duration-700 ${
-            isVisible ? 'animate-fade-in translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
-          }`} style={{ animationDelay: '400ms' }}>
+          <motion.div className="glass-dark rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-border" variants={itemVariants}>
             {!isSubmitted ? (
               <>
                 <div className="flex items-center gap-2 mb-4 sm:mb-6">
@@ -248,10 +247,10 @@ const Contact = () => {
                 </button>
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

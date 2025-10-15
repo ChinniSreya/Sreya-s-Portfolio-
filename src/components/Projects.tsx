@@ -1,34 +1,34 @@
-
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Github, Star } from "lucide-react";
+import { motion } from "framer-motion";
 import aiSummarizerCover from "@/assets/ai-text-summarizer-cover.jpg";
 import aiInterviewCover from "@/assets/ai-interview-assistant-cover.jpg";
 import rentalMarketplaceCover from "@/assets/rental-marketplace-cover.jpg";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  const [visibleProjects, setVisibleProjects] = useState<number[]>([]);
-  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: [0.4, 0, 0.2, 1] as any,
+        staggerChildren: 0.2
+      }
+    } as any
+  };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute('data-project-index') || '0');
-            setVisibleProjects(prev => [...new Set([...prev, index])]);
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: '50px' }
-    );
-
-    projectRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 } as any,
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as any }
+    } as any
+  };
 
   const projects = [
     {
@@ -62,10 +62,16 @@ const Projects = () => {
 
 
   return (
-    <section id="projects" className="py-20 sm:py-28 px-6 overflow-hidden relative section-gradient">
-      
+    <motion.section 
+      id="projects" 
+      className="py-20 sm:py-28 px-6 overflow-hidden relative section-gradient"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={containerVariants}
+    >
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16 sm:mb-20 animate-fade-in">
+        <motion.div className="text-center mb-16 sm:mb-20" variants={itemVariants}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
             Featured Projects
           </h2>
@@ -73,23 +79,14 @@ const Projects = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Innovative solutions crafted with modern technologies and thoughtful design
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={project.id}
-              ref={(el) => (projectRefs.current[index] = el)}
-              data-project-index={index}
-              className={`group glass-dark rounded-3xl overflow-hidden shadow-elegant transition-all duration-700 hover:-translate-y-3 relative border-2 border-primary/20 hover:border-primary/40 ${
-                visibleProjects.includes(index) 
-                  ? 'animate-fade-in translate-y-0 opacity-100' 
-                  : 'translate-y-8 opacity-0'
-              }`}
-              style={{ 
-                animationDelay: `${index * 150}ms`,
-                transitionDelay: `${index * 75}ms`
-              }}
+              variants={itemVariants}
+              className="group glass-dark rounded-3xl overflow-hidden shadow-elegant transition-all duration-300 hover:-translate-y-3 relative border-2 border-primary/20 hover:border-primary/40"
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
@@ -138,11 +135,11 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
